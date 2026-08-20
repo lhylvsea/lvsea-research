@@ -1,0 +1,88 @@
+{
+  "name": "lvsea-research",
+  "version": "0.1.0",
+  "owner": "海洋哥 / lhylvsea",
+  "updated_at": "2026-08-20",
+  "review_due": "2026-11-20",
+  "status": "active",
+  "maturity_tier": "governed",
+  "lifecycle_stage": "library",
+  "context_budget_tier": "production",
+  "skill_archetype": "vertical-research-router",
+  "review_cadence": "quarterly",
+  "intent": {
+    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构和时间线分析统一路由到可审计的中文优先研究流程。",
+    "target_users": [
+      "海洋哥及其本地 Codex 工作流",
+      "制造企业管理者和工程/运营团队",
+      "需要来源、证据和行动建议的 Agent 使用者"
+    ],
+    "inputs": [
+      "自然语言问题",
+      "URL、网页、PDF、Word、表格、代码和本地资料",
+      "用户提供的候选方案、案例或历史线索"
+    ],
+    "outputs": [
+      "结论与研究备忘录",
+      "事实核验表",
+      "证据账本与来源矩阵",
+      "决策/对标/历史类比报告",
+      "路由、验证和未核验项记录"
+    ],
+    "exclusions": [
+      "简单名词解释",
+      "纯翻译或只摘要",
+      "无研究动作的头脑风暴",
+      "未经专业复核的医疗、法律或财务最终意见",
+      "未经授权的外部写入和第三方脚本执行"
+    ]
+  },
+  "risk": {
+    "output_risk": "high",
+    "execution_risk": "medium",
+    "trust_boundary": "external-evidence-dependent"
+  },
+  "permissions": {
+    "network": "公开来源只读；用户明确授权后才允许 GitHub 发布",
+    "file_write": "仅写入请求的研究产物和 Skill 包；不自动覆盖用户资料",
+    "subprocess": "只运行本包确定性路由/验证脚本和经过审查的 provider 命令",
+    "secrets": "不读取或写入公开产物"
+  },
+  "target_platforms": [
+    "openai",
+    "claude",
+    "generic",
+    "agent-skills-compatible",
+    "vscode"
+  ],
+  "factory_components": [
+    "references",
+    "scripts",
+    "evals",
+    "reports",
+    "tests"
+  ],
+  "release_gates": [
+    "intent_capture",
+    "prior_art_research",
+    "keep_adapt_reject_invent_ledger",
+    "provider_and_license_boundary",
+    "root_entrypoint_isolation",
+    "trigger_regression",
+    "route_regression",
+    "context_budget",
+    "skill_ir",
+    "secret_scan",
+    "evidence_bound_public_claims",
+    "feature_branch_only_publication",
+    "pull_request_review_and_check_gate",
+    "released_version_immutability",
+    "github_release_creation",
+    "npx_discovery_and_clean_install"
+  ],
+  "research_snapshot": {
+    "reviewed_at": "2026-08-20",
+    "source_report": "reports/prior-art-research.md",
+    "policy": "semantic adoption; do not mirror upstream wholesale"
+  }
+}

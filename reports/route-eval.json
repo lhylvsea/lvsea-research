@@ -1,0 +1,128 @@
+{
+  "ok": true,
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0
+  },
+  "failures": [],
+  "results": [
+    {
+      "id": "fast-1",
+      "text": "帮我查一下这条法规的发布日期",
+      "expected_route": "fast-retrieval",
+      "actual_route": "fast-retrieval",
+      "expected_depth": "quick",
+      "actual_depth": "quick",
+      "primary_provider": "anysearch",
+      "collaborators": [],
+      "passed": true
+    },
+    {
+      "id": "fact-1",
+      "text": "查证这份安全材料里的数字和法规依据",
+      "expected_route": "fact-check",
+      "actual_route": "fact-check",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "deep-1",
+      "text": "深度研究膨润土猫砂的工艺路线、成本和工厂风险",
+      "expected_route": "deep-research",
+      "actual_route": "deep-research",
+      "expected_depth": "deep",
+      "actual_depth": "deep",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "timeline-1",
+      "text": "梳理这个 AI 产品从诞生到现在的发展历程，并比较当前竞品",
+      "expected_route": "timeline-cross-section",
+      "actual_route": "timeline-cross-section",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check",
+        "benchmark-comparison"
+      ],
+      "passed": true
+    },
+    {
+      "id": "decision-1",
+      "text": "两个设备改造方案选哪个，是否先做低成本试点",
+      "expected_route": "decision-analysis",
+      "actual_route": "decision-analysis",
+      "expected_depth": null,
+      "actual_depth": "quick",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "benchmark-comparison",
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "diagnosis-1",
+      "text": "这个商业问题到底卡在哪里，先检查我的前提和因果",
+      "expected_route": "problem-diagnosis",
+      "actual_route": "problem-diagnosis",
+      "expected_depth": null,
+      "actual_depth": "quick",
+      "primary_provider": "host-web",
+      "collaborators": [
+        "decision-analysis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "benchmark-1",
+      "text": "帮我找三个值得学习的竞品并比较获客、交付和复购",
+      "expected_route": "benchmark-comparison",
+      "actual_route": "benchmark-comparison",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "history-1",
+      "text": "从历史案例找一个带条件的标准答案，并包含失败案例",
+      "expected_route": "historical-analogy",
+      "actual_route": "historical-analogy",
+      "expected_depth": null,
+      "actual_depth": "quick",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "explicit-1",
+      "text": "用 fact-check 路由研究这条说法",
+      "expected_route": "fact-check",
+      "actual_route": "fact-check",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "problem-diagnosis"
+      ],
+      "passed": true
+    }
+  ]
+}

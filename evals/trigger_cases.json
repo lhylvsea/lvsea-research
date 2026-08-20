@@ -1,0 +1,44 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": ["research", "evidence", "authoring_action"],
+  "positive_concepts": {
+    "research": ["研究", "调研", "深度", "deep research", "research report", "方案", "试点"],
+    "evidence": ["来源", "证据", "事实", "查证", "核验", "反证", "evidence"],
+    "authoring_action": ["研究", "分析", "比较", "查证", "形成", "输出", "判断", "做"]
+  },
+  "negative_patterns": [
+    "只解释",
+    "纯翻译",
+    "只摘要",
+    "只改写",
+    "只查看",
+    "不要查资料",
+    "不要研究",
+    "no research",
+    "translation only"
+  ],
+  "should_trigger": [
+    {"text": "深度研究膨润土猫砂的工艺、成本、竞品和工厂落地风险", "family": "manufacturing_deep_research", "min_concept_matches": 2},
+    {"text": "查证安全生产材料中的数字、法规依据和因果说法，给我来源表", "family": "fact_check", "min_concept_matches": 2},
+    {"text": "比较两个设备改造方案，判断是否先做低成本试点", "family": "decision_comparison", "min_concept_matches": 2},
+    {"text": "从历史案例研究制造企业怎样从老板亲自交付转向流程化管理", "family": "historical_analogy", "min_concept_matches": 2},
+    {"text": "研究这个 AI 产品从诞生到现在的路线、竞品和未来情景", "family": "timeline_cross_section", "min_concept_matches": 2},
+    {"text": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断", "family": "policy_research", "min_concept_matches": 2}
+  ],
+  "should_not_trigger": [
+    {"text": "只解释一下贝叶斯和频率学派的区别，不要查资料", "family": "explain_only"},
+    {"text": "把这段中文纯翻译成英文，不要研究", "family": "translation_only"},
+    {"text": "只摘要这篇文章，不要补充来源或分析", "family": "summary_only"},
+    {"text": "只给我三个研究主题方向，不要做研究", "family": "brainstorm_only"},
+    {"text": "只查看这张图片里的文字，不要核验和分析", "family": "read_only"}
+  ],
+  "near_neighbor": [
+    {"text": "帮我写一段关于设备管理的宣传文案", "family": "copywriting"},
+    {"text": "做一个空白的研究报告目录模板，不研究具体对象", "family": "template_only"},
+    {"text": "解释这段代码为什么报错，不需要外部资料", "family": "coding_question"}
+  ],
+  "adversarial": [
+    {"text": "研究这个项目，但不要查资料，只根据常识直接下结论", "family": "no_sources"},
+    {"text": "帮我形成一个研究报告，但不要研究对象，也不要来源", "family": "empty_report"}
+  ]
+}

@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "package": {
+    "name": "lvsea-research",
+    "version": "0.1.0",
+    "owner": "海洋哥 / lhylvsea",
+    "status": "active",
+    "maturity_tier": "governed"
+  },
+  "intent": {
+    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构和时间线分析统一路由到可审计的中文优先研究流程。",
+    "target_users": [
+      "海洋哥及其本地 Codex 工作流",
+      "制造企业管理者和工程/运营团队",
+      "需要来源、证据和行动建议的 Agent 使用者"
+    ],
+    "inputs": [
+      "自然语言问题",
+      "URL、网页、PDF、Word、表格、代码和本地资料",
+      "用户提供的候选方案、案例或历史线索"
+    ],
+    "outputs": [
+      "结论与研究备忘录",
+      "事实核验表",
+      "证据账本与来源矩阵",
+      "决策/对标/历史类比报告",
+      "路由、验证和未核验项记录"
+    ],
+    "exclusions": [
+      "简单名词解释",
+      "纯翻译或只摘要",
+      "无研究动作的头脑风暴",
+      "未经专业复核的医疗、法律或财务最终意见",
+      "未经授权的外部写入和第三方脚本执行"
+    ]
+  },
+  "triggers": {
+    "positive": [
+      {
+        "text": "深度研究膨润土猫砂的工艺、成本、竞品和工厂落地风险",
+        "family": "manufacturing_deep_research",
+        "min_concept_matches": 2
+      },
+      {
+        "text": "查证安全生产材料中的数字、法规依据和因果说法，给我来源表",
+        "family": "fact_check",
+        "min_concept_matches": 2
+      },
+      {
+        "text": "比较两个设备改造方案，判断是否先做低成本试点",
+        "family": "decision_comparison",
+        "min_concept_matches": 2
+      },
+      {
+        "text": "从历史案例研究制造企业怎样从老板亲自交付转向流程化管理",
+        "family": "historical_analogy",
+        "min_concept_matches": 2
+      },
+      {
+        "text": "研究这个 AI 产品从诞生到现在的路线、竞品和未来情景",
+        "family": "timeline_cross_section",
+        "min_concept_matches": 2
+      },
+      {
+        "text": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断",
+        "family": "policy_research",
+        "min_concept_matches": 2
+      }
+    ],
+    "negative": [
+      {
+        "text": "只解释一下贝叶斯和频率学派的区别，不要查资料",
+        "family": "explain_only"
+      },
+      {
+        "text": "把这段中文纯翻译成英文，不要研究",
+        "family": "translation_only"
+      },
+      {
+        "text": "只摘要这篇文章，不要补充来源或分析",
+        "family": "summary_only"
+      },
+      {
+        "text": "只给我三个研究主题方向，不要做研究",
+        "family": "brainstorm_only"
+      },
+      {
+        "text": "只查看这张图片里的文字，不要核验和分析",
+        "family": "read_only"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "text": "帮我写一段关于设备管理的宣传文案",
+        "family": "copywriting"
+      },
+      {
+        "text": "做一个空白的研究报告目录模板，不研究具体对象",
+        "family": "template_only"
+      },
+      {
+        "text": "解释这段代码为什么报错，不需要外部资料",
+        "family": "coding_question"
+      }
+    ],
+    "adversarial": [
+      {
+        "text": "研究这个项目，但不要查资料，只根据常识直接下结论",
+        "family": "no_sources"
+      },
+      {
+        "text": "帮我形成一个研究报告，但不要研究对象，也不要来源",
+        "family": "empty_report"
+      }
+    ],
+    "description_required_concepts": [
+      "research",
+      "evidence",
+      "authoring_action"
+    ]
+  },
+  "workflow": {
+    "primary_routes": {
+      "fast-retrieval": {
+        "role": "single-fact, definition, URL, or current-state retrieval",
+        "source_lanes": [
+          "direct page",
+          "primary source"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": []
+      },
+      "fact-check": {
+        "role": "claim, number, date, causality, regulation, or authenticity verification",
+        "source_lanes": [
+          "primary source",
+          "independent check",
+          "counterevidence"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "problem-diagnosis"
+        ]
+      },
+      "deep-research": {
+        "role": "systematic research of a product, company, technology, policy, or concept",
+        "source_lanes": [
+          "definition",
+          "mechanism",
+          "current state",
+          "alternatives",
+          "counterevidence",
+          "primary sources"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "fact-check"
+        ]
+      },
+      "timeline-cross-section": {
+        "role": "longitudinal development plus current cross-sectional comparison",
+        "source_lanes": [
+          "origin",
+          "timeline",
+          "current position",
+          "comparators",
+          "counterevidence"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "fact-check",
+          "benchmark-comparison"
+        ]
+      },
+      "decision-analysis": {
+        "role": "choice, investment, adoption, prioritization, or experiment design",
+        "source_lanes": [
+          "reference class",
+          "current evidence",
+          "alternative actions",
+          "disconfirming evidence"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "fact-check"
+        ]
+      },
+      "problem-diagnosis": {
+        "role": "ambiguous business, management, engineering, or operational problem",
+        "source_lanes": [
+          "term definitions",
+          "assumption check",
+          "causal evidence",
+          "fact premises",
+          "constraints"
+        ],
+        "primary_candidates": [
+          "host-web",
+          "anysearch",
+          "multi-search-engine"
+        ],
+        "collaborators": [
+          "decision-analysis"
+        ]
+      },
+      "benchmark-comparison": {
+        "role": "benchmark, competitor, option, mechanism, or value-chain comparison",
+        "source_lanes": [
+          "candidate set",
+          "value chain",
+          "cost and quality",
+          "risk and compliance",
+          "failure evidence"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "fact-check"
+        ]
+      },
+      "historical-analogy": {
+        "role": "historical analogy, standard-answer research, or reusable mechanism",
+        "source_lanes": [
+          "closest success",
+          "cross-domain mechanism",
+          "failure case",
+          "boundary or counterexample"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "fact-check"
+        ]
+      }
+    },
+    "route_cases": [
+      {
+        "id": "fast-1",
+        "text": "帮我查一下这条法规的发布日期",
+        "expected_route": "fast-retrieval",
+        "expected_depth": "quick"
+      },
+      {
+        "id": "fact-1",
+        "text": "查证这份安全材料里的数字和法规依据",
+        "expected_route": "fact-check"
+      },
+      {
+        "id": "deep-1",
+        "text": "深度研究膨润土猫砂的工艺路线、成本和工厂风险",
+        "expected_route": "deep-research",
+        "expected_depth": "deep"
+      },
+      {
+        "id": "timeline-1",
+        "text": "梳理这个 AI 产品从诞生到现在的发展历程，并比较当前竞品",
+        "expected_route": "timeline-cross-section"
+      },
+      {
+        "id": "decision-1",
+        "text": "两个设备改造方案选哪个，是否先做低成本试点",
+        "expected_route": "decision-analysis"
+      },
+      {
+        "id": "diagnosis-1",
+        "text": "这个商业问题到底卡在哪里，先检查我的前提和因果",
+        "expected_route": "problem-diagnosis"
+      },
+      {
+        "id": "benchmark-1",
+        "text": "帮我找三个值得学习的竞品并比较获客、交付和复购",
+        "expected_route": "benchmark-comparison"
+      },
+      {
+        "id": "history-1",
+        "text": "从历史案例找一个带条件的标准答案，并包含失败案例",
+        "expected_route": "historical-analogy"
+      },
+      {
+        "id": "explicit-1",
+        "text": "用 fact-check 路由研究这条说法",
+        "expected_route": "fact-check"
+      }
+    ],
+    "stages": [
+      "intent",
+      "source_plan",
+      "retrieve",
+      "evidence_ledger",
+      "analysis",
+      "challenge",
+      "synthesis",
+      "qa"
+    ]
+  },
+  "resources": {
+    "references": [
+      "references/challenge-and-diagnosis.md",
+      "references/decision-and-bayesian.md",
+      "references/historical-analogy.md",
+      "references/output-contract.md",
+      "references/research-operating-system.md",
+      "references/route-playbook.md",
+      "references/source-and-evidence.md",
+      "references/timeline-and-comparison.md",
+      "references/trust-and-safety.md"
+    ],
+    "scripts": [
+      "scripts/context_sizer.py",
+      "scripts/export_skill_ir.py",
+      "scripts/release_check.py",
+      "scripts/route_eval.py",
+      "scripts/route_request.py",
+      "scripts/trigger_eval.py",
+      "scripts/validate_package.py"
+    ],
+    "evals": [
+      "evals/route_cases.json",
+      "evals/trigger_cases.json"
+    ],
+    "reports": [
+      "reports/context-budget.json",
+      "reports/creation-handoff.md",
+      "reports/output-evidence.json",
+      "reports/prior-art-research.md",
+      "reports/route-eval.json",
+      "reports/skill-ir.json",
+      "reports/synthesis-ledger.md",
+      "reports/trigger-eval.json"
+    ]
+  },
+  "risk": {
+    "output_risk": "high",
+    "execution_risk": "medium",
+    "trust_boundary": "external-evidence-dependent"
+  },
+  "governance": {
+    "review_due": "2026-11-20",
+    "review_cadence": "quarterly",
+    "release_gates": [
+      "intent_capture",
+      "prior_art_research",
+      "keep_adapt_reject_invent_ledger",
+      "provider_and_license_boundary",
+      "root_entrypoint_isolation",
+      "trigger_regression",
+      "route_regression",
+      "context_budget",
+      "skill_ir",
+      "secret_scan",
+      "evidence_bound_public_claims",
+      "feature_branch_only_publication",
+      "pull_request_review_and_check_gate",
+      "released_version_immutability",
+      "github_release_creation",
+      "npx_discovery_and_clean_install"
+    ],
+    "publication": "feature branch -> pull request -> versioned release -> discovery -> clean install"
+  },
+  "portability": {
+    "platforms": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible",
+      "vscode"
+    ],
+    "runtime": "agent-skills canonical source; Python scripts are optional deterministic QA helpers",
+    "degradation": "provider fallback and evidence-state reporting are required"
+  },
+  "evidence_boundary": {
+    "static_tests_prove": [
+      "package shape",
+      "trigger boundary fixtures",
+      "route regression",
+      "script behavior"
+    ],
+    "static_tests_do_not_prove": [
+      "current-world factual correctness",
+      "provider availability",
+      "human usefulness",
+      "professional advice"
+    ],
+    "output_evidence_file": "reports/output-evidence.json"
+  }
+}

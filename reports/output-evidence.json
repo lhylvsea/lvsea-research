@@ -1,0 +1,16 @@
+{
+  "ok": false,
+  "evidence_kind": "missing_evidence",
+  "status": "static_only",
+  "missing_evidence": "No provider-backed or independent human-blind output review was performed for a real lvsea-research user request during package creation.",
+  "static_evidence": [
+    "public source inventory was read-only reviewed",
+    "route and trigger fixtures are included",
+    "package-owned validation scripts are included"
+  ],
+  "next_evidence": [
+    "run a real Chinese research request through the installed package",
+    "capture source URLs, evidence ledger and final output",
+    "perform an independent blind review before making quality claims"
+  ]
+}
