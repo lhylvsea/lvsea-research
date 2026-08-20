@@ -1,0 +1,247 @@
+{
+  "ok": true,
+  "threshold": 0.34,
+  "description_concepts": [
+    "authoring_action",
+    "evidence",
+    "research"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 16,
+    "passed": 16,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "bucket_summary": {
+    "should_trigger": {
+      "total": 6,
+      "passed": 6
+    },
+    "should_not_trigger": {
+      "total": 5,
+      "passed": 5
+    },
+    "near_neighbor": {
+      "total": 3,
+      "passed": 3
+    },
+    "adversarial": {
+      "total": 2,
+      "passed": 2
+    }
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "深度研究膨润土猫砂的工艺、成本、竞品和工厂落地风险",
+        "family": "manufacturing_deep_research",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "查证安全生产材料中的数字、法规依据和因果说法，给我来源表",
+        "family": "fact_check",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "比较两个设备改造方案，判断是否先做低成本试点",
+        "family": "decision_comparison",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "从历史案例研究制造企业怎样从老板亲自交付转向流程化管理",
+        "family": "historical_analogy",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "研究这个 AI 产品从诞生到现在的路线、竞品和未来情景",
+        "family": "timeline_cross_section",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断",
+        "family": "policy_research",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "只解释一下贝叶斯和频率学派的区别，不要查资料",
+        "family": "explain_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "只解释"
+      },
+      {
+        "prompt": "把这段中文纯翻译成英文，不要研究",
+        "family": "translation_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": "纯翻译"
+      },
+      {
+        "prompt": "只摘要这篇文章，不要补充来源或分析",
+        "family": "summary_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence"
+        ],
+        "negative_pattern": "只摘要"
+      },
+      {
+        "prompt": "只给我三个研究主题方向，不要做研究",
+        "family": "brainstorm_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "只查看这张图片里的文字，不要核验和分析",
+        "family": "read_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence"
+        ],
+        "negative_pattern": "只查看"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "帮我写一段关于设备管理的宣传文案",
+        "family": "copywriting",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "做一个空白的研究报告目录模板，不研究具体对象",
+        "family": "template_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "解释这段代码为什么报错，不需要外部资料",
+        "family": "coding_question",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ],
+    "adversarial": [
+      {
+        "prompt": "研究这个项目，但不要查资料，只根据常识直接下结论",
+        "family": "no_sources",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": "不要查资料"
+      },
+      {
+        "prompt": "帮我形成一个研究报告，但不要研究对象，也不要来源",
+        "family": "empty_report",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": "不要研究"
+      }
+    ]
+  }
+}

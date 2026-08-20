@@ -1,0 +1,34 @@
+interface:
+  display_name: "Lvsea Research Boss"
+  short_description: "中文优先的研究、查证、决策与方法论总路由"
+  default_prompt: "Use $lvsea-research as the single research routing authority. Capture intent, choose one primary route, retrieve and grade evidence, separate facts from inferences and assumptions, challenge premises, synthesize an actionable conclusion, and report provider or evidence limits honestly."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+    - "agent-skills-compatible"
+    - "vscode"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash-or-powershell"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow metadata and read-only source review; forbid unreviewed execution"
+    generated_public_claims: "evidence-bound"
+  permissions:
+    network: "read-only sources and prior-art review; publication only after explicit request"
+    file_write: "research artifacts and requested Skill package only"
+    subprocess: "package-owned validation plus reviewed providers"
+    interactive: "ask only high-value questions when the missing answer changes the route or conclusion"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"
+    agent-skills-compatible: "canonical-source"
+    vscode: "neutral-source-plus-review-notes"

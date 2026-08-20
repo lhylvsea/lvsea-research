@@ -1,0 +1,82 @@
+{
+  "status": "pass",
+  "root": "lvsea-research",
+  "entrypoint_bytes": 10089,
+  "reference_bytes": 17468,
+  "total_package_bytes": 76194,
+  "groups": {
+    "entrypoint": {
+      "bytes": 10089,
+      "files": 1
+    },
+    "interface": {
+      "bytes": 4261,
+      "files": 2
+    },
+    "references": {
+      "bytes": 17468,
+      "files": 9
+    },
+    "scripts": {
+      "bytes": 40371,
+      "files": 7
+    },
+    "evals": {
+      "bytes": 4005,
+      "files": 2
+    }
+  },
+  "largest_files": [
+    {
+      "path": "scripts/route_request.py",
+      "bytes": 12109,
+      "group": "scripts"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 10089,
+      "group": "entrypoint"
+    },
+    {
+      "path": "scripts/validate_package.py",
+      "bytes": 8202,
+      "group": "scripts"
+    },
+    {
+      "path": "scripts/trigger_eval.py",
+      "bytes": 5953,
+      "group": "scripts"
+    },
+    {
+      "path": "scripts/export_skill_ir.py",
+      "bytes": 4315,
+      "group": "scripts"
+    },
+    {
+      "path": "scripts/release_check.py",
+      "bytes": 4126,
+      "group": "scripts"
+    },
+    {
+      "path": "scripts/route_eval.py",
+      "bytes": 2931,
+      "group": "scripts"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 2759,
+      "group": "interface"
+    },
+    {
+      "path": "scripts/context_sizer.py",
+      "bytes": 2735,
+      "group": "scripts"
+    },
+    {
+      "path": "evals/trigger_cases.json",
+      "bytes": 2711,
+      "group": "evals"
+    }
+  ],
+  "warnings": []
+}
