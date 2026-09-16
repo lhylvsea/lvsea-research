@@ -1,81 +1,81 @@
 {
   "status": "pass",
-  "root": "lvsea-research",
-  "entrypoint_bytes": 10089,
-  "reference_bytes": 17468,
-  "total_package_bytes": 76194,
+  "root": "integrate-research-to-diagram",
+  "entrypoint_bytes": 11975,
+  "reference_bytes": 23862,
+  "total_package_bytes": 92763,
   "groups": {
     "entrypoint": {
-      "bytes": 10089,
+      "bytes": 11975,
       "files": 1
     },
     "interface": {
-      "bytes": 4261,
+      "bytes": 4947,
       "files": 2
     },
     "references": {
-      "bytes": 17468,
-      "files": 9
+      "bytes": 23862,
+      "files": 10
     },
     "scripts": {
-      "bytes": 40371,
-      "files": 7
+      "bytes": 47140,
+      "files": 8
     },
     "evals": {
-      "bytes": 4005,
+      "bytes": 4839,
       "files": 2
     }
   },
   "largest_files": [
     {
       "path": "scripts/route_request.py",
-      "bytes": 12109,
+      "bytes": 13672,
       "group": "scripts"
     },
     {
       "path": "SKILL.md",
-      "bytes": 10089,
+      "bytes": 11975,
       "group": "entrypoint"
     },
     {
       "path": "scripts/validate_package.py",
-      "bytes": 8202,
+      "bytes": 8404,
       "group": "scripts"
     },
     {
       "path": "scripts/trigger_eval.py",
-      "bytes": 5953,
+      "bytes": 6121,
+      "group": "scripts"
+    },
+    {
+      "path": "references/research-diagram.md",
+      "bytes": 5632,
+      "group": "references"
+    },
+    {
+      "path": "scripts/release_check.py",
+      "bytes": 4550,
       "group": "scripts"
     },
     {
       "path": "scripts/export_skill_ir.py",
-      "bytes": 4315,
+      "bytes": 4429,
       "group": "scripts"
     },
     {
-      "path": "scripts/release_check.py",
-      "bytes": 4126,
-      "group": "scripts"
-    },
-    {
-      "path": "scripts/route_eval.py",
-      "bytes": 2931,
+      "path": "scripts/render_diagram.py",
+      "bytes": 4139,
       "group": "scripts"
     },
     {
       "path": "manifest.json",
-      "bytes": 2759,
+      "bytes": 3318,
       "group": "interface"
     },
     {
-      "path": "scripts/context_sizer.py",
-      "bytes": 2735,
+      "path": "scripts/route_eval.py",
+      "bytes": 3017,
       "group": "scripts"
-    },
-    {
-      "path": "evals/trigger_cases.json",
-      "bytes": 2711,
-      "group": "evals"
     }
   ],
   "warnings": []

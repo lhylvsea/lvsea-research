@@ -6,10 +6,15 @@
   "static_evidence": [
     "public source inventory was read-only reviewed",
     "route and trigger fixtures are included",
-    "package-owned validation scripts are included"
+    "package-owned validation scripts are included",
+    "route regression passed for 12 cases",
+    "trigger regression passed for 18 cases",
+    "unit tests passed for 14 cases",
+    "render_diagram.py correctly refused a local render because Graphviz dot is not installed on this host"
   ],
   "next_evidence": [
     "run a real Chinese research request through the installed package",
+    "install or otherwise provide Graphviz dot, render a real DOT artifact and inspect PDF/SVG/PNG output",
     "capture source URLs, evidence ledger and final output",
     "perform an independent blind review before making quality claims"
   ]

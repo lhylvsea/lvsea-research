@@ -1,6 +1,6 @@
 # lvsea-research
 
-> 中文优先的研究、探讨、查证与决策总调度 Skill。它把实时检索、证据账本、前提挑战、时间线/横截面、贝叶斯决策、历史同构和对标分析放进一个可路由、可验证、可继续维护的包。
+> 中文优先的研究、探讨、查证与决策总调度 Skill。它把实时检索、证据账本、前提挑战、时间线/横截面、贝叶斯决策、历史同构、对标分析和研究驱动的关系图/知识可视化放进一个可路由、可验证、可继续维护的包。
 
 ## 它解决什么问题
 
@@ -29,6 +29,7 @@ npx skills add lhylvsea/lvsea-research --skill lvsea-research
 2. 用 $lvsea-research 查证安全生产材料中的数字、法规依据和因果说法，做事实核验表，不要把推测写成事实。
 3. 用 $lvsea-research 比较两个设备改造方案，按停机风险、产能、维护、投资回收和可逆试点做决策分析。
 4. 用 $lvsea-research 从历史案例研究制造企业如何从老板亲自交付转向流程化管理，同时找失败案例和不能照搬的条件。
+5. 用 $lvsea-research 研究膨润土猫砂从原矿到成品的工艺、设备和质量控制关系，生成可编辑 DOT、PDF 和来源映射。
 
 ## 路由总览
 
@@ -42,6 +43,7 @@ npx skills add lhylvsea/lvsea-research --skill lvsea-research
 | problem-diagnosis | 问题混乱、术语模糊、前提可能错误 | 问题重述、诊断和缺口 |
 | benchmark-comparison | 对标、竞品、方案和机制比较 | 矩阵、价值链和迁移边界 |
 | historical-analogy | 找历史案例和带条件的标准答案 | 结构指纹、案例和机制 |
+| research-diagram | 从零研究后生成关系图、知识图谱、概念图、架构图或流程图 | DOT + PDF/SVG/PNG + 来源映射 |
 
 ## 默认工作流
 
@@ -51,7 +53,8 @@ npx skills add lhylvsea/lvsea-research --skill lvsea-research
 4. 建立证据账本：来源、日期、等级、独立性、支持关系和局限。
 5. 按路由执行分析，避免所有请求都强行长报告。
 6. 先给结论，再给证据、推导、反证、未知项和下一步。
-7. 交付前检查链接、数字、单位、事实/推断边界、风险和未验证项。
+7. 需要图形时先建立节点/关系证据账本，选择视觉语法，再生成可编辑 DOT；只有实际找到 Graphviz 并成功执行时才交付 PDF/SVG/PNG。
+8. 交付前检查链接、数字、单位、事实/推断边界、图形方向/图例/字体、风险和未验证项。
 
 ## 运行与验证
 
@@ -72,13 +75,28 @@ Windows PowerShell 可使用 py 替换 python。这些命令验证包结构、�
 
 - Python 3.9+ 用于本包验证脚本；
 - 真实研究需要宿主 Web/浏览器能力，或安装并配置一个可用的检索 provider；
+- 研究驱动图形需要 Graphviz 的 `dot` 可执行文件；PlantUML/Mermaid 不是默认依赖；
 - AnySearch 可匿名使用但有配额/速率限制，API Key 由用户自行配置，不能写入仓库；
 - 不需要为了安装本 Skill 自动安装第三方 MCP、浏览器或搜索 API。
+
+## 研究驱动图形
+
+没有现成结构化数据、需要先研究主题关系时，直接自然语言提出“研究并生成关系图/知识图谱/架构图”。路由会把它交给 `research-diagram`，先完成来源计划、实体/关系提取和证据映射，再生成 DOT。
+
+已有 DOT、JSON、CSV 或关系表只需要转换时，不应伪装成研究；可在仓库根目录直接运行：
+
+~~~bash
+python scripts/render_diagram.py diagram.dot --format pdf --output output/diagram.pdf
+python scripts/render_diagram.py diagram.dot --format svg --output output/diagram.svg
+~~~
+
+输出文件已存在时需显式加入 `--force`。脚本不执行 shell 字符串、不自动下载 Graphviz，并支持 Windows、macOS 和 Linux 的同一调用方式。中文字体需按宿主实际安装情况选择。
 
 ## 注意事项、限制与能力边界
 
 - 研究结论只对注明的时间、地域、样本和来源范围负责；动态事实需要重新核验。
 - 搜索结果摘要、Stars、下载量、第三方评分不能证明事实或输出质量。
+- 图谱不是证据本身；每条关键边要有来源映射，或明确标为推断/待验证，复杂主题先总览后细节。
 - 没有可靠基准或似然比时，不输出伪精确概率；高风险领域只做决策支持。
 - 对标用于理解机制和边界，不鼓励复制商业秘密、受限素材、品牌或侵权内容。
 - 用户未授权外部写入时，所有网络、GitHub、文件和账户操作保持只读。
@@ -89,6 +107,7 @@ Windows PowerShell 可使用 py 替换 python。这些命令验证包结构、�
 - 路由结果不符合预期：先运行 python scripts/route_request.py --text "..." --json，检查关键词与显式路由，再修正 references/route-playbook.md 或增加评测用例。
 - 触发过宽：把“只解释、翻译、只摘要、只查看、不要查资料”等负例补进 evals/trigger_cases.json。
 - provider 不可用：保留来源计划，切换宿主 Web/浏览器或本地文件，并在交付中写明降级。
+- `dot` 不存在或渲染失败：先交付研究结构、DOT 和缺口，不声称 PDF/SVG/PNG 已生成；检查 `dot -V`、输入语法和中文字体。
 - 研究内容过长：降低深度为 standard，先交付结论、证据表和缺口，不为字数堆材料。
 
 ## 许可证与研究来源

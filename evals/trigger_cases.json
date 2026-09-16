@@ -23,7 +23,8 @@
     {"text": "比较两个设备改造方案，判断是否先做低成本试点", "family": "decision_comparison", "min_concept_matches": 2},
     {"text": "从历史案例研究制造企业怎样从老板亲自交付转向流程化管理", "family": "historical_analogy", "min_concept_matches": 2},
     {"text": "研究这个 AI 产品从诞生到现在的路线、竞品和未来情景", "family": "timeline_cross_section", "min_concept_matches": 2},
-    {"text": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断", "family": "policy_research", "min_concept_matches": 2}
+    {"text": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断", "family": "policy_research", "min_concept_matches": 2},
+    {"text": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源", "family": "research_diagram", "min_concept_matches": 2}
   ],
   "should_not_trigger": [
     {"text": "只解释一下贝叶斯和频率学派的区别，不要查资料", "family": "explain_only"},
@@ -35,7 +36,8 @@
   "near_neighbor": [
     {"text": "帮我写一段关于设备管理的宣传文案", "family": "copywriting"},
     {"text": "做一个空白的研究报告目录模板，不研究具体对象", "family": "template_only"},
-    {"text": "解释这段代码为什么报错，不需要外部资料", "family": "coding_question"}
+    {"text": "解释这段代码为什么报错，不需要外部资料", "family": "coding_question"},
+    {"text": "把这份已有 DOT 文件直接转成 PDF，不需要研究", "family": "diagram_conversion_only"}
   ],
   "adversarial": [
     {"text": "研究这个项目，但不要查资料，只根据常识直接下结论", "family": "no_sources"},

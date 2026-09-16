@@ -54,7 +54,7 @@ def export_ir(root: Path) -> dict[str, Any]:
                 for name, value in ROUTES.items()
             },
             "route_cases": route_cases.get("cases", []),
-            "stages": ["intent", "source_plan", "retrieve", "evidence_ledger", "analysis", "challenge", "synthesis", "qa"],
+            "stages": ["intent", "source_plan", "retrieve", "evidence_ledger", "analysis", "challenge", "synthesis", "visualize", "qa"],
         },
         "resources": {
             "references": sorted(path.relative_to(root).as_posix() for path in (root / "references").glob("*.md")),

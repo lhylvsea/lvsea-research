@@ -1,9 +1,9 @@
 {
   "name": "lvsea-research",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "owner": "海洋哥 / lhylvsea",
-  "updated_at": "2026-08-20",
-  "review_due": "2026-11-20",
+  "updated_at": "2026-09-16",
+  "review_due": "2026-12-16",
   "status": "active",
   "maturity_tier": "governed",
   "lifecycle_stage": "library",
@@ -11,7 +11,7 @@
   "skill_archetype": "vertical-research-router",
   "review_cadence": "quarterly",
   "intent": {
-    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构和时间线分析统一路由到可审计的中文优先研究流程。",
+    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
     "target_users": [
       "海洋哥及其本地 Codex 工作流",
       "制造企业管理者和工程/运营团队",
@@ -27,6 +27,7 @@
       "事实核验表",
       "证据账本与来源矩阵",
       "决策/对标/历史类比报告",
+      "可编辑 DOT、PDF/SVG/PNG 图形和节点/关系来源映射",
       "路由、验证和未核验项记录"
     ],
     "exclusions": [
@@ -81,8 +82,14 @@
     "npx_discovery_and_clean_install"
   ],
   "research_snapshot": {
-    "reviewed_at": "2026-08-20",
+    "reviewed_at": "2026-09-16",
     "source_report": "reports/prior-art-research.md",
-    "policy": "semantic adoption; do not mirror upstream wholesale"
+    "policy": "semantic adoption; do not mirror upstream wholesale",
+    "new_source": {
+      "repository": "wshuyi/research-to-diagram",
+      "reviewed_commit": "c13ec59f3c894da607d7d5b17a18fccdba0bc389",
+      "adopted_as": "research-diagram route and package-owned cross-platform Graphviz renderer",
+      "not_adopted": "Claude-only WebSearch assumptions, macOS-only installer, upstream templates, code, and unverified speed or output claims"
+    }
   }
 }
