@@ -1,7 +1,7 @@
 # Prior-Art Research
 
-- Reviewed at: 2026-08-20
-- Scope: the seven user-specified sources plus the local lvsea-zao-skill authoring tool
+- Reviewed at: 2026-09-16
+- Scope: the eight user-specified sources plus the local lvsea-zao-skill authoring tool
 - Policy: read public source and metadata only; do not execute unreviewed upstream scripts or bundle upstream private material
 - Result: five repositories were cloned read-only at shallow snapshots, the specified OpenClaw path was independently checked and unavailable, and the local lvsea-zao prior-art script was run as an additional discovery pass
 
@@ -16,6 +16,7 @@
 | dontbesilent2025/dbskill/dbs-diagnosis | Git commit 7e770e54aaaa8f43cac344b536d3adce095ead8f; SKILL.md and agent metadata; CC BY-NC 4.0 | Automatically challenge ambiguous terms, assumptions, causal leaps, fact premises and information gaps; use staged dialogue | Contains strong unverified axioms, arbitrary population claims, forced harsh voice and psychological overreach; noncommercial license forbids casual reuse | Adapt only the abstract questioning problem; no prose, cases or code copied |
 | dontbesilent2025/dbskill/dbs-benchmark | Same dbskill snapshot; SKILL.md; CC BY-NC 4.0 | Compare candidates through a consistent filter and business value chain; inspect execution granularity rather than surface similarity | “Profit is the only standard”, fixed thresholds and dismissing user constraints are too dogmatic; copying can create ethical/legal risk | Adapt into multi-criteria mechanism/benchmark comparison |
 | dontbesilent2025/dbskill/dbs-standard-answer | Same dbskill snapshot; SKILL.md, evals and agent metadata; CC BY-NC 4.0 | Structure fingerprint, closest/success/failure/counterexample roles, analogy matrix, conditional answer and failure boundary | Historical analogy can become biography or survivor bias unless source independence and differences are explicit | Keep the structure-fingerprint and conditional-answer pattern, with evidence gates |
+| [wshuyi/research-to-diagram](https://github.com/wshuyi/research-to-diagram) | Git commit `c13ec59f3c894da607d7d5b17a18fccdba0bc389`; root README/README_CN, plugin metadata, nested SKILL.md, DOT templates and `generate_pdf.sh`; MIT | Research first, then extract entities/relations, choose visual grammar, write Graphviz DOT, render PDF and retain sources | Claude Code/WebSearch and macOS Homebrew assumptions are not portable; renderer is Bash-only; speed, node-count and PDF examples are upstream claims, not verified package evidence | Adapt into `research-diagram` route plus package-owned cross-platform renderer; reject mirror-copying and unverified output claims |
 
 ## What was actually checked
 
@@ -26,22 +27,23 @@ The following files were read from the local snapshots:
 - hv-analysis: SKILL.md, schema and PDF script metadata
 - dbskill: dbs-diagnosis, dbs-benchmark and dbs-standard-answer SKILL.md files, agent metadata, eval metadata and repository license
 - OpenClaw source: the exact user URL, Git clone URL, raw SKILL.md and raw README.md path
+- research-to-diagram: root README/README_CN, MIT license, `.claude-plugin/plugin.json`, nested SKILL.md, three DOT examples and `scripts/generate_pdf.sh`
 
-No upstream executable, installer, hook or provider script was run. Public method descriptions were paraphrased rather than copied into this package.
+No upstream executable, installer, hook or provider script was run. Public method descriptions were paraphrased rather than copied into this package; the new renderer is independently implemented with Python subprocess argument arrays and no shell interpolation.
 
 ## Additional lvsea-zao discovery pass
 
-The installed lvsea-zao-skill prior-art script was invoked with four intent queries:
+The installed lvsea-zao-skill prior-art script was invoked again on 2026-09-16 with three intent queries:
 
-- deep research evidence synthesis
-- Bayesian decision analysis
-- web research source verification
-- competitive historical analysis
+- research to diagram
+- knowledge graph visualization
+- Graphviz research workflow
 
-The run returned 54 candidate families in its catalog. Three skills.sh query runs completed; the Bayesian query timed out at the configured 15-second limit. SkillsMP was intentionally skipped in this pass. This catalog is discovery evidence only, not proof that a candidate is usable or high quality.
+The run returned 25 candidate families from SkillsMP. All three SkillsMP query runs completed; skills.sh was intentionally skipped because its `npx` lookup did not complete within the first bounded attempt. The result is therefore `ok=true`, `complete=false`, with no recorded catalog error. This catalog is discovery evidence only, not proof that a candidate is usable or high quality.
 
 ## Evidence and license boundary
 
 - anysearch, yao and hv-analysis use Apache-2.0 or MIT licenses, but this package does not copy their code.
 - dbskill is CC BY-NC 4.0. This package does not bundle its prose, examples, scripts, data or cases. The reusable content here is independently worded and limited to generic research questions and comparison structures, with attribution retained.
 - The missing OpenClaw source is not treated as confirmed prior art. Secondary directory pages may be used as leads for future review, not as a source of copied implementation or authoritative claims.
+- The research-to-diagram source is treated as method inspiration only. Its provider, platform, time, node-count and output-size claims are not package measurements; PDF/SVG/PNG claims require a real local render, and research quality still requires provider-backed evidence and independent review.

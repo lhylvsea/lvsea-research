@@ -1,7 +1,7 @@
 interface:
   display_name: "Lvsea Research Boss"
-  short_description: "中文优先的研究、查证、决策与方法论总路由"
-  default_prompt: "Use $lvsea-research as the single research routing authority. Capture intent, choose one primary route, retrieve and grade evidence, separate facts from inferences and assumptions, challenge premises, synthesize an actionable conclusion, and report provider or evidence limits honestly."
+  short_description: "中文优先的研究、查证、决策与知识可视化总路由"
+  default_prompt: "Use $lvsea-research as the single research routing authority. Capture intent, choose one primary route, retrieve and grade evidence, separate facts from inferences and assumptions, challenge premises, optionally map supported entities and relationships into an auditable diagram, synthesize an actionable conclusion, and report provider, renderer, or evidence limits honestly."
 compatibility:
   canonical_format: "agent-skills"
   adapter_targets:

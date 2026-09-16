@@ -8,24 +8,24 @@
   ],
   "missing_description_concepts": [],
   "summary": {
-    "total": 16,
-    "passed": 16,
+    "total": 18,
+    "passed": 18,
     "false_positive": 0,
     "false_negative": 0,
     "pass_rate": 1.0
   },
   "bucket_summary": {
     "should_trigger": {
-      "total": 6,
-      "passed": 6
+      "total": 7,
+      "passed": 7
     },
     "should_not_trigger": {
       "total": 5,
       "passed": 5
     },
     "near_neighbor": {
-      "total": 3,
-      "passed": 3
+      "total": 4,
+      "passed": 4
     },
     "adversarial": {
       "total": 2,
@@ -103,6 +103,20 @@
       {
         "prompt": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断",
         "family": "policy_research",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源",
+        "family": "research_diagram",
         "expected_trigger": true,
         "predicted_trigger": true,
         "passed": true,
@@ -211,6 +225,19 @@
         "passed": true,
         "score": 0.0,
         "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "把这份已有 DOT 文件直接转成 PDF，不需要研究",
+        "family": "diagram_conversion_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
         "negative_pattern": null
       }
     ],

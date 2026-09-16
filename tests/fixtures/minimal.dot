@@ -1,0 +1,5 @@
+digraph G {
+  graph [rankdir=LR]
+  node [shape=box]
+  research -> evidence [label="supports"]
+}

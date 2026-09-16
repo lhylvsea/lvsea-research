@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "package": {
     "name": "lvsea-research",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "owner": "海洋哥 / lhylvsea",
     "status": "active",
     "maturity_tier": "governed"
   },
   "intent": {
-    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构和时间线分析统一路由到可审计的中文优先研究流程。",
+    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
     "target_users": [
       "海洋哥及其本地 Codex 工作流",
       "制造企业管理者和工程/运营团队",
@@ -24,6 +24,7 @@
       "事实核验表",
       "证据账本与来源矩阵",
       "决策/对标/历史类比报告",
+      "可编辑 DOT、PDF/SVG/PNG 图形和节点/关系来源映射",
       "路由、验证和未核验项记录"
     ],
     "exclusions": [
@@ -65,6 +66,11 @@
         "text": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断",
         "family": "policy_research",
         "min_concept_matches": 2
+      },
+      {
+        "text": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源",
+        "family": "research_diagram",
+        "min_concept_matches": 2
       }
     ],
     "negative": [
@@ -101,6 +107,10 @@
       {
         "text": "解释这段代码为什么报错，不需要外部资料",
         "family": "coding_question"
+      },
+      {
+        "text": "把这份已有 DOT 文件直接转成 PDF，不需要研究",
+        "family": "diagram_conversion_only"
       }
     ],
     "adversarial": [
@@ -257,6 +267,25 @@
         "collaborators": [
           "fact-check"
         ]
+      },
+      "research-diagram": {
+        "role": "research-driven relationship, concept, process, or technical architecture diagram",
+        "source_lanes": [
+          "topic scope",
+          "entities and attributes",
+          "relationship evidence",
+          "structure validation",
+          "counterevidence"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "deep-research",
+          "fact-check"
+        ]
       }
     },
     "route_cases": [
@@ -303,6 +332,23 @@
         "expected_route": "historical-analogy"
       },
       {
+        "id": "diagram-1",
+        "text": "研究膨润土猫砂从原矿到成品的工艺、设备和质量控制关系，生成可编辑 DOT 和 PDF 图",
+        "expected_route": "research-diagram",
+        "expected_depth": "standard"
+      },
+      {
+        "id": "diagram-2",
+        "text": "深度研究 Kubernetes 架构并生成可视化知识图谱",
+        "expected_route": "research-diagram",
+        "expected_depth": "deep"
+      },
+      {
+        "id": "diagram-3",
+        "text": "用 research-to-diagram 研究石墨深加工工艺并做结构图",
+        "expected_route": "research-diagram"
+      },
+      {
         "id": "explicit-1",
         "text": "用 fact-check 路由研究这条说法",
         "expected_route": "fact-check"
@@ -316,6 +362,7 @@
       "analysis",
       "challenge",
       "synthesis",
+      "visualize",
       "qa"
     ]
   },
@@ -325,6 +372,7 @@
       "references/decision-and-bayesian.md",
       "references/historical-analogy.md",
       "references/output-contract.md",
+      "references/research-diagram.md",
       "references/research-operating-system.md",
       "references/route-playbook.md",
       "references/source-and-evidence.md",
@@ -335,6 +383,7 @@
       "scripts/context_sizer.py",
       "scripts/export_skill_ir.py",
       "scripts/release_check.py",
+      "scripts/render_diagram.py",
       "scripts/route_eval.py",
       "scripts/route_request.py",
       "scripts/trigger_eval.py",
@@ -349,6 +398,7 @@
       "reports/creation-handoff.md",
       "reports/output-evidence.json",
       "reports/prior-art-research.md",
+      "reports/release-local.json",
       "reports/route-eval.json",
       "reports/skill-ir.json",
       "reports/synthesis-ledger.md",
@@ -361,7 +411,7 @@
     "trust_boundary": "external-evidence-dependent"
   },
   "governance": {
-    "review_due": "2026-11-20",
+    "review_due": "2026-12-16",
     "review_cadence": "quarterly",
     "release_gates": [
       "intent_capture",

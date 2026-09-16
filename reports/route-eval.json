@@ -1,8 +1,8 @@
 {
   "ok": true,
   "summary": {
-    "total": 9,
-    "passed": 9,
+    "total": 12,
+    "passed": 12,
     "failed": 0
   },
   "failures": [],
@@ -107,6 +107,48 @@
       "actual_depth": "quick",
       "primary_provider": "anysearch",
       "collaborators": [
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "diagram-1",
+      "text": "研究膨润土猫砂从原矿到成品的工艺、设备和质量控制关系，生成可编辑 DOT 和 PDF 图",
+      "expected_route": "research-diagram",
+      "actual_route": "research-diagram",
+      "expected_depth": "standard",
+      "actual_depth": "standard",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "deep-research",
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "diagram-2",
+      "text": "深度研究 Kubernetes 架构并生成可视化知识图谱",
+      "expected_route": "research-diagram",
+      "actual_route": "research-diagram",
+      "expected_depth": "deep",
+      "actual_depth": "deep",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "deep-research",
+        "fact-check"
+      ],
+      "passed": true
+    },
+    {
+      "id": "diagram-3",
+      "text": "用 research-to-diagram 研究石墨深加工工艺并做结构图",
+      "expected_route": "research-diagram",
+      "actual_route": "research-diagram",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "deep-research",
         "fact-check"
       ],
       "passed": true

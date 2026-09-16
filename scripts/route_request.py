@@ -60,6 +60,12 @@ ROUTES: dict[str, dict[str, Any]] = {
         "collaborators": ["fact-check"],
         "source_lanes": ["closest success", "cross-domain mechanism", "failure case", "boundary or counterexample"],
     },
+    "research-diagram": {
+        "role": "research-driven relationship, concept, process, or technical architecture diagram",
+        "primary_candidates": ["anysearch", "multi-search-engine", "host-web"],
+        "collaborators": ["deep-research", "fact-check"],
+        "source_lanes": ["topic scope", "entities and attributes", "relationship evidence", "structure validation", "counterevidence"],
+    },
 }
 
 PROVIDERS: dict[str, dict[str, Any]] = {
@@ -80,12 +86,22 @@ PROVIDERS: dict[str, dict[str, Any]] = {
 EXPLICIT_ALIASES = {
     "fast-retrieval": ["fast-retrieval", "fast retrieval", "快速查", "查一个事实"],
     "fact-check": ["fact-check", "fact check", "事实核验", "查证"],
-    "deep-research": ["deep-research", "deep research", "深度研究", "系统研究"],
+    "deep-research": ["deep-research", "deep research"],
     "timeline-cross-section": ["timeline-cross-section", "横纵分析", "时间线与横截面"],
     "decision-analysis": ["decision-analysis", "bayesian", "贝叶斯", "决策分析"],
     "problem-diagnosis": ["problem-diagnosis", "商业诊断", "问题诊断", "前提挑战"],
     "benchmark-comparison": ["benchmark-comparison", "竞品分析", "对标分析", "方案比较"],
     "historical-analogy": ["historical-analogy", "历史同构", "标准答案", "历史类比"],
+    "research-diagram": [
+        "research-diagram",
+        "research to diagram",
+        "research-to-diagram",
+        "研究并做图",
+        "研究并生成图",
+        "研究后可视化",
+        "知识图谱",
+        "关系图谱",
+    ],
 }
 
 
@@ -192,6 +208,29 @@ def _choose_route(text: str) -> tuple[str, str]:
 
     if _has(text, "查证", "核实", "真假", "是否属实", "数字对不对", "法规依据", "fact check", "verify"):
         return "fact-check", "the request asks to verify claims or source-backed facts"
+
+    research_terms = ("研究", "调研", "深度分析", "系统分析", "research", "investigate")
+    diagram_terms = (
+        "知识图谱",
+        "关系图谱",
+        "关系图",
+        "结构图",
+        "架构图",
+        "流程图",
+        "可视化",
+        "图表",
+        "生成图",
+        "做图",
+        "画图",
+        "制图",
+        "dot",
+        "graphviz",
+        "diagram",
+        "graph",
+        "visualize",
+    )
+    if _has(text, *research_terms) and _has(text, *diagram_terms):
+        return "research-diagram", "the request combines active research with an explicit visual relationship or structure output"
 
     if _has(text, "是什么", "最新情况", "网页内容", "链接内容", "查一下", "lookup", "extract") and _depth(text) == "quick":
         return "fast-retrieval", "the request is a bounded retrieval task"
