@@ -8,24 +8,24 @@
   ],
   "missing_description_concepts": [],
   "summary": {
-    "total": 18,
-    "passed": 18,
+    "total": 20,
+    "passed": 20,
     "false_positive": 0,
     "false_negative": 0,
     "pass_rate": 1.0
   },
   "bucket_summary": {
     "should_trigger": {
-      "total": 7,
-      "passed": 7
+      "total": 8,
+      "passed": 8
     },
     "should_not_trigger": {
       "total": 5,
       "passed": 5
     },
     "near_neighbor": {
-      "total": 4,
-      "passed": 4
+      "total": 5,
+      "passed": 5
     },
     "adversarial": {
       "total": 2,
@@ -117,6 +117,20 @@
       {
         "prompt": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源",
         "family": "research_diagram",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "研究这个工艺的核心关系，只保留能改变结论或行动的实体，并标注来源",
+        "family": "minimal_entity_research",
         "expected_trigger": true,
         "predicted_trigger": true,
         "passed": true,
@@ -239,6 +253,20 @@
           "research"
         ],
         "negative_pattern": null
+      },
+      {
+        "prompt": "把所有和这个主题有关的实体都列出来，不要研究或核验",
+        "family": "entity_listing_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": "不要研究"
       }
     ],
     "adversarial": [

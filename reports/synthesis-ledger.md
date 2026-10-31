@@ -17,6 +17,12 @@
 | Research-to-diagram separation of research, structure and rendering | wshuyi/research-to-diagram | A visual artifact is more trustworthy when its nodes and edges come from an explicit evidence process rather than decorative layout |
 | Visual grammar matched to the object | wshuyi/research-to-diagram | People, concepts, processes, architectures and timelines need different node, edge and layout choices |
 | Editable source plus rendered artifact plus sources | wshuyi/research-to-diagram | DOT can be reviewed and revised; the rendered file serves communication; the source ledger preserves auditability |
+| Observable problem anchor, conflict and constraint capture | dbs-good-question | Research expands from a concrete phenomenon instead of a vague topic label |
+| Term, premise, causality, fact and missing-variable checks | dbs-deconstruct, dbs-diagnosis | A research route can correct the question before adding sources or objects |
+| Structure fingerprint plus success, failure and boundary roles | dbs-standard-answer | Historical and theoretical material becomes conditional mechanism evidence rather than name-dropping |
+| One upstream bottleneck and one high-value question | Eva Think | Clarification reduces uncertainty without turning the intake into a questionnaire |
+| Alternative explanations and falsification conditions | Eva Lens, Eva Review | A conclusion remains a testable working judgment rather than a final story |
+| Thin module boundaries and evidence-bounded handoff | Eva Link, Eva Shared | The core stays stable; a helper module is loaded only when it adds a missing capability |
 
 ## Adapt
 
@@ -32,6 +38,8 @@
 | Fixed “10x faster”, 2–5 minute, 50+ node and PDF-size claims | Keep only the bounded readability heuristic; record time, node count and file size as run evidence when actually measured |
 | PlantUML/Mermaid as if already available | Treat as optional adapters; only claim them after the host has the renderer and a successful invocation |
 | Parallel subagents as a requirement | Parallel lanes are optional host capabilities; a single agent can run the same query matrix sequentially |
+| Fixed creator workflow, memory/project files or asset schemas | Do not transplant Eva-specific persistence or content-production contracts into a research router |
+| Fixed counts of theories, cases, entities or perspectives | Use necessity and evidence gates instead of arbitrary completeness quotas |
 
 ## Reject
 
@@ -46,6 +54,8 @@
 - Publishing upstream CC BY-NC content or silently changing its license boundary.
 - Treating a graph’s visual neatness as evidence for an unsupported node or relationship.
 - Adding a second root Skill or mirroring the upstream plugin tree into a vertical router.
+- Adding concepts, theories, cases, metrics or helper modules only because they are related, famous or make the output look complete.
+- Turning a sharp explanation or psychological label from a creator workflow into a research fact or diagnosis.
 
 ## Invent
 
@@ -58,6 +68,8 @@
 7. A maintenance boundary: references carry judgment; scripts carry deterministic checks; reports carry provenance and limitations.
 8. A Chinese-first operating style shaped for manufacturing management, policy, safety, operations, AI tools and reusable local artifacts.
 9. A research-to-visualization route that keeps evidence mapping, editable DOT, rendered output and visual QA as separate checkpoints.
+10. A minimum-sufficient entity gate: **如无必需，勿增实体**. Every core entity and relationship must have a necessity reason; every relationship must have evidence or a traceable inference chain.
+11. A module-loading gate that prefers one upstream bottleneck, one primary route and only capability-adding collaborators.
 
 ## Generalization gate result
 

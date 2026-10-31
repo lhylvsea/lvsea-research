@@ -64,8 +64,16 @@ ROUTES: dict[str, dict[str, Any]] = {
         "role": "research-driven relationship, concept, process, or technical architecture diagram",
         "primary_candidates": ["anysearch", "multi-search-engine", "host-web"],
         "collaborators": ["deep-research", "fact-check"],
-        "source_lanes": ["topic scope", "entities and attributes", "relationship evidence", "structure validation", "counterevidence"],
+        "source_lanes": ["topic scope", "entity necessity", "entities and attributes", "relationship evidence", "structure validation", "counterevidence"],
     },
+}
+
+ANALYSIS_GUARDRAILS = {
+    "entity_constraint": "如无必需，勿增实体",
+    "question_constraint": "先钉可观察现象、决策或待核验主张；只追问会改变判断的缺口",
+    "evidence_constraint": "新增关系必须有来源或明确、可复核的推理链",
+    "module_constraint": "只加载能补足缺失变量、证据、交付或校验的协作模块",
+    "challenge_constraint": "对强结论检查替代解释、反例或否证条件",
 }
 
 PROVIDERS: dict[str, dict[str, Any]] = {
@@ -287,6 +295,7 @@ def choose_route(request: str, extra_roots: list[str] | None = None) -> dict[str
         "method_status": "available",
         "collaborator_candidates": collaborator_names,
         "source_lanes": ROUTES[route]["source_lanes"],
+        "analysis_guardrails": ANALYSIS_GUARDRAILS,
         "provider_status": provider_status,
         "assumptions": {
             "language": "zh-CN",

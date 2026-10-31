@@ -20,11 +20,11 @@ def export_ir(root: Path) -> dict[str, Any]:
     cases = load_json(root / "evals/trigger_cases.json")
     route_cases = load_json(root / "evals/route_cases.json")
     try:
-        from route_request import ROUTES
+        from route_request import ANALYSIS_GUARDRAILS, ROUTES
     except ImportError:
         import sys
         sys.path.insert(0, str(root / "scripts"))
-        from route_request import ROUTES
+        from route_request import ANALYSIS_GUARDRAILS, ROUTES
 
     return {
         "schema_version": "1.0",
@@ -54,6 +54,7 @@ def export_ir(root: Path) -> dict[str, Any]:
                 for name, value in ROUTES.items()
             },
             "route_cases": route_cases.get("cases", []),
+            "analysis_guardrails": ANALYSIS_GUARDRAILS,
             "stages": ["intent", "source_plan", "retrieve", "evidence_ledger", "analysis", "challenge", "synthesis", "visualize", "qa"],
         },
         "resources": {

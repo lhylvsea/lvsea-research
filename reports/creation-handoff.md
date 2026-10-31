@@ -2,7 +2,7 @@
 
 ## Result
 
-Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-first vertical research router. It still uses one root SKILL.md, modular references, deterministic route/trigger/context/IR scripts, evaluation fixtures, provenance reports and a clear provider/evidence boundary; it now adds a research-driven diagram route and a package-owned Graphviz renderer.
+Extended the governed package lvsea-research from v0.1.1 to v0.1.2 as a Chinese-first vertical research router. It still uses one root SKILL.md, modular references, deterministic route/trigger/context/IR scripts, evaluation fixtures, provenance reports and a clear provider/evidence boundary; it now adds a minimum-sufficient entity constraint that governs research objects, relationships and helper modules.
 
 ## Integrated strengths
 
@@ -15,6 +15,8 @@ Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-
 - historical structure fingerprints with success, failure and counterexample roles;
 - research-to-diagram separation, entity/relationship evidence mapping and visual grammar selection;
 - editable DOT plus optional PDF/SVG/PNG output through a cross-platform, no-shell renderer;
+- minimum-sufficient entity and relationship gates: **如无必需，勿增实体**;
+- one-upstream-bottleneck clarification, alternative-explanation/falsification review and evidence-bounded handoff;
 - evidence-bound conclusions and reversible next actions.
 
 ## Deliberate limits
@@ -22,6 +24,7 @@ Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-
 - no upstream source code or restricted prose is bundled;
 - no upstream templates, Bash renderer, Claude-only provider assumptions or unverified speed/output claims are bundled;
 - no search API key, MCP registration or browser session is created;
+- no dbskill or Eva-skill protected prose, cases, scripts, schemas, assets, memory/project files or runtime entrypoints are bundled;
 - no real user research request was run through the package during this integration;
 - no independent human visual review was performed; local renderer tests are static/controlled evidence only;
 - OpenClaw's exact user-specified source could not be directly retrieved on 2026-08-20;
@@ -39,6 +42,8 @@ Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-
 - reports/: research ledger, synthesis ledger, evidence boundary and generated QA reports
 - tests/: Python unit tests
 
+The new `references/minimal-entity-constraint.md` is the single detailed source for the entity, relationship and module-loading gate; the root entrypoint only carries the short routing rule.
+
 ## Verification status
 
 Generated reports should be read together with this handoff:
@@ -49,6 +54,8 @@ Generated reports should be read together with this handoff:
 - platform-neutral IR: run python scripts/export_skill_ir.py . --output reports/skill-ir.json
 - context budget: run python scripts/context_sizer.py . --output reports/context-budget.json
 - local release gates: run python scripts/release_check.py . --phase local --run-tests
+
+The expected static evidence remains `static_only`; no provider-backed research output or independent blind review was performed in this integration.
 
 ## Publication boundary
 

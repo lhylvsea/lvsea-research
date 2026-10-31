@@ -1,8 +1,8 @@
 {
   "ok": true,
   "summary": {
-    "total": 12,
-    "passed": 12,
+    "total": 13,
+    "passed": 13,
     "failed": 0
   },
   "failures": [],
@@ -14,7 +14,7 @@
       "actual_route": "fast-retrieval",
       "expected_depth": "quick",
       "actual_depth": "quick",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [],
       "passed": true
     },
@@ -25,7 +25,7 @@
       "actual_route": "fact-check",
       "expected_depth": null,
       "actual_depth": "standard",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "problem-diagnosis"
       ],
@@ -38,7 +38,7 @@
       "actual_route": "deep-research",
       "expected_depth": "deep",
       "actual_depth": "deep",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "fact-check"
       ],
@@ -51,7 +51,7 @@
       "actual_route": "timeline-cross-section",
       "expected_depth": null,
       "actual_depth": "standard",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "fact-check",
         "benchmark-comparison"
@@ -65,7 +65,7 @@
       "actual_route": "decision-analysis",
       "expected_depth": null,
       "actual_depth": "quick",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "benchmark-comparison",
         "fact-check"
@@ -92,7 +92,7 @@
       "actual_route": "benchmark-comparison",
       "expected_depth": null,
       "actual_depth": "standard",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "fact-check"
       ],
@@ -105,7 +105,7 @@
       "actual_route": "historical-analogy",
       "expected_depth": null,
       "actual_depth": "quick",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "fact-check"
       ],
@@ -118,7 +118,7 @@
       "actual_route": "research-diagram",
       "expected_depth": "standard",
       "actual_depth": "standard",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "deep-research",
         "fact-check"
@@ -132,7 +132,7 @@
       "actual_route": "research-diagram",
       "expected_depth": "deep",
       "actual_depth": "deep",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "deep-research",
         "fact-check"
@@ -146,7 +146,7 @@
       "actual_route": "research-diagram",
       "expected_depth": null,
       "actual_depth": "standard",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "deep-research",
         "fact-check"
@@ -160,9 +160,23 @@
       "actual_route": "fact-check",
       "expected_depth": null,
       "actual_depth": "standard",
-      "primary_provider": "anysearch",
+      "primary_provider": "host-web",
       "collaborators": [
         "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "entity-gate-1",
+      "text": "研究这个工艺的核心关系，只保留必要实体并生成可编辑关系图",
+      "expected_route": "research-diagram",
+      "actual_route": "research-diagram",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "primary_provider": "host-web",
+      "collaborators": [
+        "deep-research",
+        "fact-check"
       ],
       "passed": true
     }

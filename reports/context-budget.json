@@ -1,40 +1,40 @@
 {
   "status": "pass",
-  "root": "integrate-research-to-diagram",
-  "entrypoint_bytes": 11975,
-  "reference_bytes": 23862,
-  "total_package_bytes": 92763,
+  "root": "target",
+  "entrypoint_bytes": 12848,
+  "reference_bytes": 30423,
+  "total_package_bytes": 102637,
   "groups": {
     "entrypoint": {
-      "bytes": 11975,
+      "bytes": 12848,
       "files": 1
     },
     "interface": {
-      "bytes": 4947,
+      "bytes": 6081,
       "files": 2
     },
     "references": {
-      "bytes": 23862,
-      "files": 10
+      "bytes": 30423,
+      "files": 11
     },
     "scripts": {
-      "bytes": 47140,
+      "bytes": 47964,
       "files": 8
     },
     "evals": {
-      "bytes": 4839,
+      "bytes": 5321,
       "files": 2
     }
   },
   "largest_files": [
     {
       "path": "scripts/route_request.py",
-      "bytes": 13672,
+      "bytes": 14285,
       "group": "scripts"
     },
     {
       "path": "SKILL.md",
-      "bytes": 11975,
+      "bytes": 12848,
       "group": "entrypoint"
     },
     {
@@ -43,14 +43,14 @@
       "group": "scripts"
     },
     {
+      "path": "references/research-diagram.md",
+      "bytes": 6132,
+      "group": "references"
+    },
+    {
       "path": "scripts/trigger_eval.py",
       "bytes": 6121,
       "group": "scripts"
-    },
-    {
-      "path": "references/research-diagram.md",
-      "bytes": 5632,
-      "group": "references"
     },
     {
       "path": "scripts/release_check.py",
@@ -59,23 +59,23 @@
     },
     {
       "path": "scripts/export_skill_ir.py",
-      "bytes": 4429,
-      "group": "scripts"
-    },
-    {
-      "path": "scripts/render_diagram.py",
-      "bytes": 4139,
+      "bytes": 4529,
       "group": "scripts"
     },
     {
       "path": "manifest.json",
-      "bytes": 3318,
+      "bytes": 4400,
       "group": "interface"
     },
     {
-      "path": "scripts/route_eval.py",
-      "bytes": 3017,
+      "path": "scripts/render_diagram.py",
+      "bytes": 4250,
       "group": "scripts"
+    },
+    {
+      "path": "references/minimal-entity-constraint.md",
+      "bytes": 4188,
+      "group": "references"
     }
   ],
   "warnings": []

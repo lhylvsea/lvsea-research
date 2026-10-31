@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "package": {
     "name": "lvsea-research",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "owner": "海洋哥 / lhylvsea",
     "status": "active",
     "maturity_tier": "governed"
   },
   "intent": {
-    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
+    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程，并约束无必要实体、关系和协作模块的扩张。",
     "target_users": [
       "海洋哥及其本地 Codex 工作流",
       "制造企业管理者和工程/运营团队",
@@ -25,6 +25,7 @@
       "证据账本与来源矩阵",
       "决策/对标/历史类比报告",
       "可编辑 DOT、PDF/SVG/PNG 图形和节点/关系来源映射",
+      "必要实体/关系账本（在图形、争议或交接场景外显）",
       "路由、验证和未核验项记录"
     ],
     "exclusions": [
@@ -71,6 +72,11 @@
         "text": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源",
         "family": "research_diagram",
         "min_concept_matches": 2
+      },
+      {
+        "text": "研究这个工艺的核心关系，只保留能改变结论或行动的实体，并标注来源",
+        "family": "minimal_entity_research",
+        "min_concept_matches": 2
       }
     ],
     "negative": [
@@ -111,6 +117,10 @@
       {
         "text": "把这份已有 DOT 文件直接转成 PDF，不需要研究",
         "family": "diagram_conversion_only"
+      },
+      {
+        "text": "把所有和这个主题有关的实体都列出来，不要研究或核验",
+        "family": "entity_listing_only"
       }
     ],
     "adversarial": [
@@ -272,6 +282,7 @@
         "role": "research-driven relationship, concept, process, or technical architecture diagram",
         "source_lanes": [
           "topic scope",
+          "entity necessity",
           "entities and attributes",
           "relationship evidence",
           "structure validation",
@@ -352,8 +363,20 @@
         "id": "explicit-1",
         "text": "用 fact-check 路由研究这条说法",
         "expected_route": "fact-check"
+      },
+      {
+        "id": "entity-gate-1",
+        "text": "研究这个工艺的核心关系，只保留必要实体并生成可编辑关系图",
+        "expected_route": "research-diagram"
       }
     ],
+    "analysis_guardrails": {
+      "entity_constraint": "如无必需，勿增实体",
+      "question_constraint": "先钉可观察现象、决策或待核验主张；只追问会改变判断的缺口",
+      "evidence_constraint": "新增关系必须有来源或明确、可复核的推理链",
+      "module_constraint": "只加载能补足缺失变量、证据、交付或校验的协作模块",
+      "challenge_constraint": "对强结论检查替代解释、反例或否证条件"
+    },
     "stages": [
       "intent",
       "source_plan",
@@ -371,6 +394,7 @@
       "references/challenge-and-diagnosis.md",
       "references/decision-and-bayesian.md",
       "references/historical-analogy.md",
+      "references/minimal-entity-constraint.md",
       "references/output-contract.md",
       "references/research-diagram.md",
       "references/research-operating-system.md",
@@ -411,12 +435,13 @@
     "trust_boundary": "external-evidence-dependent"
   },
   "governance": {
-    "review_due": "2026-12-16",
+    "review_due": "2027-01-31",
     "review_cadence": "quarterly",
     "release_gates": [
       "intent_capture",
       "prior_art_research",
       "keep_adapt_reject_invent_ledger",
+      "entity_constraint_review",
       "provider_and_license_boundary",
       "root_entrypoint_isolation",
       "trigger_regression",

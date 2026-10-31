@@ -1,7 +1,7 @@
 # Prior-Art Research
 
-- Reviewed at: 2026-09-16
-- Scope: the eight user-specified sources plus the local lvsea-zao-skill authoring tool
+- Initial review: 2026-09-16
+- Scope: the initial user-specified sources plus the local lvsea-zao-skill authoring tool
 - Policy: read public source and metadata only; do not execute unreviewed upstream scripts or bundle upstream private material
 - Result: five repositories were cloned read-only at shallow snapshots, the specified OpenClaw path was independently checked and unavailable, and the local lvsea-zao prior-art script was run as an additional discovery pass
 
@@ -47,3 +47,16 @@ The run returned 25 candidate families from SkillsMP. All three SkillsMP query r
 - dbskill is CC BY-NC 4.0. This package does not bundle its prose, examples, scripts, data or cases. The reusable content here is independently worded and limited to generic research questions and comparison structures, with attribution retained.
 - The missing OpenClaw source is not treated as confirmed prior art. Secondary directory pages may be used as leads for future review, not as a source of copied implementation or authoritative claims.
 - The research-to-diagram source is treated as method inspiration only. Its provider, platform, time, node-count and output-size claims are not package measurements; PDF/SVG/PNG claims require a real local render, and research quality still requires provider-backed evidence and independent review.
+
+## 2026-10-31 supplement: user-requested sources
+
+The two requested repositories were cloned at shallow, read-only snapshots. Only public metadata, licenses, root documentation, relevant `SKILL.md` files and references were read; no upstream installer, hook, script, provider or generated command was executed.
+
+| Source | Snapshot/evidence | Reusable mechanism | Decision |
+| --- | --- | --- | --- |
+| [dontbesilent2025/dbskill](https://github.com/dontbesilent2025/dbskill) | commit `bab93c0376ced995c30cb841cb0d12622a430bcc`; `dbs-good-question`, `dbs-deconstruct`, `dbs-diagnosis`, `dbs-benchmark`, `dbs-standard-answer`, `dbs-theory-grounding`; CC BY-NC 4.0 | Anchor research in observable phenomena and conflicts; inspect terms, assumptions, causal jumps, facts and missing variables; compare mechanisms and cases with boundaries | Adapt only as independently worded research gates. Reject upstream axioms, arbitrary thresholds, cases, knowledge-base material, scripts and protected prose |
+| [Lulu-Eva/Eva-skill](https://github.com/Lulu-Eva/Eva-skill) | commit `40cce029682146fe42d178f429ea1eaa80f8b29a`; `eva-think`, `eva-lens`, `eva-review`, `eva-link`, `eva-shared`; CC BY-NC 4.0 with additional legal/trademark notices | Address one upstream bottleneck; pressure-test judgments with alternative explanations and falsification; retain evidence, confidence and missing fields at handoff; keep modules thin and non-overlapping | Adapt only the research-relevant constraints. Reject creator-specific workflows, protected prose, asset/schema files, memory/project persistence and Eva runtime entrypoints |
+
+### Synthesis boundary
+
+The integrated rule is an original package-level constraint, not a copied upstream slogan: **如无必需，勿增实体**. It applies to concepts, theories, cases, metrics, relationships and helper modules. A candidate enters the core only when omitting it would damage the answer, mechanism, boundary, action, uncertainty or visual reading task. A relation additionally needs a source or a traceable inference chain. Optional context may remain in a candidate/appendix area, but it cannot expand the main conclusion by default.

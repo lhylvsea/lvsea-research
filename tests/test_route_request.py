@@ -39,6 +39,11 @@ class RouteRequestTests(unittest.TestCase):
         self.assertIn(result["status"], {"available", "method-available-provider-fallback"})
         self.assertLessEqual(len(result["collaborator_candidates"]), 2)
 
+    def test_analysis_guardrails_are_present(self) -> None:
+        result = choose_route("研究一个技术方案")
+        self.assertEqual(result["analysis_guardrails"]["entity_constraint"], "如无必需，勿增实体")
+        self.assertIn("来源", result["analysis_guardrails"]["evidence_constraint"])
+
 
 if __name__ == "__main__":
     unittest.main()

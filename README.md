@@ -12,6 +12,7 @@ lvsea-research 的做法是：
 - 先读用户材料，再补实时来源；
 - 用来源等级、独立性和反证控制结论强度；
 - 严格区分事实、来源解释、推断、假设和未知；
+- 用“如无必需，勿增实体”约束研究对象、关系、理论、案例和协作模块的扩张；
 - 只在确有必要时做时间线、竞品、贝叶斯更新或历史案例；
 - 先给结论和行动含义，再给证据、限制、下一条信息和复盘条件。
 
@@ -30,6 +31,7 @@ npx skills add lhylvsea/lvsea-research --skill lvsea-research
 3. 用 $lvsea-research 比较两个设备改造方案，按停机风险、产能、维护、投资回收和可逆试点做决策分析。
 4. 用 $lvsea-research 从历史案例研究制造企业如何从老板亲自交付转向流程化管理，同时找失败案例和不能照搬的条件。
 5. 用 $lvsea-research 研究膨润土猫砂从原矿到成品的工艺、设备和质量控制关系，生成可编辑 DOT、PDF 和来源映射。
+6. 用 $lvsea-research 研究一个技术方案，只保留会改变结论、机制、边界或行动的实体和关系，并把未核验对象放到待验证区。
 
 ## 路由总览
 
@@ -55,6 +57,12 @@ npx skills add lhylvsea/lvsea-research --skill lvsea-research
 6. 先给结论，再给证据、推导、反证、未知项和下一步。
 7. 需要图形时先建立节点/关系证据账本，选择视觉语法，再生成可编辑 DOT；只有实际找到 Graphviz 并成功执行时才交付 PDF/SVG/PNG。
 8. 交付前检查链接、数字、单位、事实/推断边界、图形方向/图例/字体、风险和未验证项。
+
+## 最小充分实体约束
+
+“如无必需，勿增实体”不是把研究删成一句话，而是约束新增对象的理由。每个概念、理论、案例、指标、比较对象、关系和协作模块，都要能说明：不加入它会损失哪个答案、机制、反例、边界、行动或不确定性。只有“相关、知名、能补背景、让图更对称”不够。
+
+关系还必须有来源或明确推理链；共现不等于关系。没有必要性或证据链的对象留在候选/待验证区，或直接不进入核心输出。详见 `references/minimal-entity-constraint.md`。
 
 ## 运行与验证
 
@@ -101,6 +109,7 @@ python scripts/render_diagram.py diagram.dot --format svg --output output/diagra
 - 对标用于理解机制和边界，不鼓励复制商业秘密、受限素材、品牌或侵权内容。
 - 用户未授权外部写入时，所有网络、GitHub、文件和账户操作保持只读。
 - 静态验证通过不等于 provider 已调用；报告会单独标记 provider 或人工证据状态。
+- 规则不要求固定的实体数量；复杂主题可以保留复杂结构，但每个核心对象都必须有不可替代的研究作用。
 
 ## 故障排查
 
@@ -112,4 +121,4 @@ python scripts/render_diagram.py diagram.dot --format svg --output output/diagra
 
 ## 许可证与研究来源
 
-本包原创内容使用 MIT。上游方法与许可证边界见 THIRD_PARTY_NOTICES.md；研究账本见 reports/prior-art-research.md。其中 dbskill 为 CC BY-NC 4.0，本仓库未打包其受限原文、案例或代码。
+本包原创内容使用 MIT。上游方法与许可证边界见 THIRD_PARTY_NOTICES.md；研究账本见 reports/prior-art-research.md。其中 dbskill 与 Eva-skill 均为 CC BY-NC 4.0，本仓库未打包它们的受限原文、案例、脚本、schema 或运行入口。
