@@ -1,9 +1,9 @@
 {
   "name": "lvsea-research",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "owner": "海洋哥 / lhylvsea",
-  "updated_at": "2026-09-16",
-  "review_due": "2026-12-16",
+  "updated_at": "2026-11-01",
+  "review_due": "2027-02-01",
   "status": "active",
   "maturity_tier": "governed",
   "lifecycle_stage": "library",
@@ -11,7 +11,7 @@
   "skill_archetype": "vertical-research-router",
   "review_cadence": "quarterly",
   "intent": {
-    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
+    "job_to_be_done": "把一般研究、学术研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
     "target_users": [
       "海洋哥及其本地 Codex 工作流",
       "制造企业管理者和工程/运营团队",
@@ -27,6 +27,7 @@
       "事实核验表",
       "证据账本与来源矩阵",
       "决策/对标/历史类比报告",
+      "研究问题卡、论文证据图、研究设计审查、学术修订和投稿检查清单",
       "可编辑 DOT、PDF/SVG/PNG 图形和节点/关系来源映射",
       "路由、验证和未核验项记录"
     ],
@@ -82,7 +83,7 @@
     "npx_discovery_and_clean_install"
   ],
   "research_snapshot": {
-    "reviewed_at": "2026-09-16",
+    "reviewed_at": "2026-11-01",
     "source_report": "reports/prior-art-research.md",
     "policy": "semantic adoption; do not mirror upstream wholesale",
     "new_source": {
@@ -90,6 +91,13 @@
       "reviewed_commit": "c13ec59f3c894da607d7d5b17a18fccdba0bc389",
       "adopted_as": "research-diagram route and package-owned cross-platform Graphviz renderer",
       "not_adopted": "Claude-only WebSearch assumptions, macOS-only installer, upstream templates, code, and unverified speed or output claims"
+    },
+    "additional_source": {
+      "repository": "ozrwayne/rw-research-skill",
+      "reviewed_commit": "dfa171d1b6a38aaf3e59fec3cba34722a584b150",
+      "license": "Apache-2.0",
+      "adopted_as": "academic-research route with question-discovery, evidence-audit, design-review, academic-writing, and project-passport modes",
+      "not_adopted": "upstream 22-Skill tree, private research ledgers, bundled scripts/templates/cases, provider claims, and unverified quality results"
     }
   }
 }

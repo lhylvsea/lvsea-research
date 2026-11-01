@@ -10,5 +10,6 @@
 | [multi-search-engine](https://github.com/openclaw/skills/tree/main/skills/gpyangyoujun/multi-search-engine) | 用户指定的多引擎搜索来源 | 2026-08-20 直接仓库与 raw 路径均未能取到，见研究报告 | 不复制；仅把“来源多样性、地区/语言/时间对照”作为待验证设计线索 |
 | [dbskill](https://github.com/dontbesilent2025/dbskill) | 问题消解、对标过滤、历史同构、成功/失败/反例比较的高层研究启发 | CC BY-NC 4.0 | 不复制其原文、案例、代码或专有表达；本包只保留独立、通用的研究问题结构，并保留来源致谢 |
 | [research-to-diagram](https://github.com/wshuyi/research-to-diagram) | 研究驱动的实体/关系提取、视觉语法、Graphviz DOT 和 PDF/矢量交付边界 | MIT；本次检查提交 `c13ec59f3c894da607d7d5b17a18fccdba0bc389` | 吸收为 `research-diagram` 路由和包内跨平台渲染器；不复制其代码、模板、示例、Claude-only 假设或未验证的速度/数量宣传 |
+| [rw-research-skill](https://github.com/ozrwayne/rw-research-skill) | 学术研究生命周期、研究问题/文献、论文证据、研究设计/统计、同行评审、写作和投稿的模块化边界 | Apache-2.0；本次检查提交 `dfa171d1b6a38aaf3e59fec3cba34722a584b150` | 只吸收为 `academic-research` 路由的模式与质量门；不复制其 22 个 Skill、台账、凭据、脚本、模板、案例或未独立验证的效果结论 |
 
 此外，Skill 封装流程参考本机 [lvsea-zao-skill](https://github.com/lhylvsea/lvsea-zao-skill) 及其上游方法来源 [qiaomu-meta-skill](https://github.com/joeseesun/qiaomu-meta-skill) 和 [yao-meta-skill](https://github.com/yaojingang/yao-meta-skill)。本包采用语义吸收策略，不是上游镜像。

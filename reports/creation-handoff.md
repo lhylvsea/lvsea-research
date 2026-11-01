@@ -2,7 +2,7 @@
 
 ## Result
 
-Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-first vertical research router. It still uses one root SKILL.md, modular references, deterministic route/trigger/context/IR scripts, evaluation fixtures, provenance reports and a clear provider/evidence boundary; it now adds a research-driven diagram route and a package-owned Graphviz renderer.
+Extended the governed package lvsea-research from v0.1.1 to v0.1.2 as a Chinese-first vertical research router. It still uses one root SKILL.md, modular references, deterministic route/trigger/context/IR scripts, evaluation fixtures, provenance reports and a clear provider/evidence boundary; it now adds a routed academic research lifecycle built from the reviewed rw-research-skill source while retaining the earlier research-driven diagram route and package-owned Graphviz renderer.
 
 ## Integrated strengths
 
@@ -15,6 +15,8 @@ Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-
 - historical structure fingerprints with success, failure and counterexample roles;
 - research-to-diagram separation, entity/relationship evidence mapping and visual grammar selection;
 - editable DOT plus optional PDF/SVG/PNG output through a cross-platform, no-shell renderer;
+- academic question and literature discovery, paper evidence extraction and audit, research design/statistics/peer review, academic writing and submission preparation;
+- deterministic academic submode dispatch with project-passport handoff objects and explicit human-confirmation gates;
 - evidence-bound conclusions and reversible next actions.
 
 ## Deliberate limits
@@ -23,8 +25,10 @@ Extended the governed package lvsea-research from v0.1.0 to v0.1.1 as a Chinese-
 - no upstream templates, Bash renderer, Claude-only provider assumptions or unverified speed/output claims are bundled;
 - no search API key, MCP registration or browser session is created;
 - no real user research request was run through the package during this integration;
+- no real paper, manuscript, journal portal or provider-backed academic request was run through the package during this integration;
 - no independent human visual review was performed; local renderer tests are static/controlled evidence only;
 - OpenClaw's exact user-specified source could not be directly retrieved on 2026-08-20;
+- the rw-research-skill README contains an owner/link inconsistency; the user-specified `ozrwayne` remote and reviewed commit are recorded without silently rewriting upstream metadata;
 - static package and route tests do not prove current-world factual accuracy or human usefulness.
 
 ## Files

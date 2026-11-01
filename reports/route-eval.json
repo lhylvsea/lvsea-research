@@ -1,8 +1,8 @@
 {
   "ok": true,
   "summary": {
-    "total": 12,
-    "passed": 12,
+    "total": 18,
+    "passed": 18,
     "failed": 0
   },
   "failures": [],
@@ -14,6 +14,8 @@
       "actual_route": "fast-retrieval",
       "expected_depth": "quick",
       "actual_depth": "quick",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [],
       "passed": true
@@ -25,6 +27,8 @@
       "actual_route": "fact-check",
       "expected_depth": null,
       "actual_depth": "standard",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "problem-diagnosis"
@@ -38,6 +42,8 @@
       "actual_route": "deep-research",
       "expected_depth": "deep",
       "actual_depth": "deep",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "fact-check"
@@ -51,6 +57,8 @@
       "actual_route": "timeline-cross-section",
       "expected_depth": null,
       "actual_depth": "standard",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "fact-check",
@@ -65,6 +73,8 @@
       "actual_route": "decision-analysis",
       "expected_depth": null,
       "actual_depth": "quick",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "benchmark-comparison",
@@ -79,6 +89,8 @@
       "actual_route": "problem-diagnosis",
       "expected_depth": null,
       "actual_depth": "quick",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "host-web",
       "collaborators": [
         "decision-analysis"
@@ -92,6 +104,8 @@
       "actual_route": "benchmark-comparison",
       "expected_depth": null,
       "actual_depth": "standard",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "fact-check"
@@ -105,6 +119,8 @@
       "actual_route": "historical-analogy",
       "expected_depth": null,
       "actual_depth": "quick",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "fact-check"
@@ -118,6 +134,8 @@
       "actual_route": "research-diagram",
       "expected_depth": "standard",
       "actual_depth": "standard",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "deep-research",
@@ -132,6 +150,8 @@
       "actual_route": "research-diagram",
       "expected_depth": "deep",
       "actual_depth": "deep",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "deep-research",
@@ -146,11 +166,106 @@
       "actual_route": "research-diagram",
       "expected_depth": null,
       "actual_depth": "standard",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "deep-research",
         "fact-check"
       ],
+      "passed": true
+    },
+    {
+      "id": "academic-question-1",
+      "text": "把这个研究兴趣转成可检索、可证伪的研究问题，给出文献检索概念和创新点核验路径",
+      "expected_route": "academic-research",
+      "actual_route": "academic-research",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "expected_mode": "question-discovery",
+      "actual_mode": "question-discovery",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check",
+        "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "academic-evidence-1",
+      "text": "精读这篇论文，提取关键主张的原文定位，做证据图和引用/主张审计",
+      "expected_route": "academic-research",
+      "actual_route": "academic-research",
+      "expected_depth": null,
+      "actual_depth": "quick",
+      "expected_mode": "evidence-audit",
+      "actual_mode": "evidence-audit",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check",
+        "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "academic-design-1",
+      "text": "审查这个研究方案的设计、数据可取得性和统计方法，列出同行评审阻断项",
+      "expected_route": "academic-research",
+      "actual_route": "academic-research",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "expected_mode": "design-review",
+      "actual_mode": "design-review",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check",
+        "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "academic-writing-1",
+      "text": "按我提供的样稿保持学术语气，修订博士论文并准备投稿检查清单",
+      "expected_route": "academic-research",
+      "actual_route": "academic-research",
+      "expected_depth": null,
+      "actual_depth": "quick",
+      "expected_mode": "academic-writing",
+      "actual_mode": "academic-writing",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check",
+        "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "academic-passport-1",
+      "text": "建立研究项目档案，记录材料状态、研究决定、未知项和交接内容",
+      "expected_route": "academic-research",
+      "actual_route": "academic-research",
+      "expected_depth": null,
+      "actual_depth": "standard",
+      "expected_mode": "project-passport",
+      "actual_mode": "project-passport",
+      "primary_provider": "anysearch",
+      "collaborators": [
+        "fact-check",
+        "problem-diagnosis"
+      ],
+      "passed": true
+    },
+    {
+      "id": "academic-fast-neighbor-1",
+      "text": "查一下这篇论文的 DOI 和正式题名",
+      "expected_route": "fast-retrieval",
+      "actual_route": "fast-retrieval",
+      "expected_depth": "quick",
+      "actual_depth": "quick",
+      "expected_mode": null,
+      "actual_mode": null,
+      "primary_provider": "anysearch",
+      "collaborators": [],
       "passed": true
     },
     {
@@ -160,6 +275,8 @@
       "actual_route": "fact-check",
       "expected_depth": null,
       "actual_depth": "standard",
+      "expected_mode": null,
+      "actual_mode": null,
       "primary_provider": "anysearch",
       "collaborators": [
         "problem-diagnosis"
