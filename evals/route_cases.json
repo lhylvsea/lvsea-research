@@ -11,6 +11,12 @@
     {"id": "diagram-1", "text": "研究膨润土猫砂从原矿到成品的工艺、设备和质量控制关系，生成可编辑 DOT 和 PDF 图", "expected_route": "research-diagram", "expected_depth": "standard"},
     {"id": "diagram-2", "text": "深度研究 Kubernetes 架构并生成可视化知识图谱", "expected_route": "research-diagram", "expected_depth": "deep"},
     {"id": "diagram-3", "text": "用 research-to-diagram 研究石墨深加工工艺并做结构图", "expected_route": "research-diagram"},
+    {"id": "academic-question-1", "text": "把这个研究兴趣转成可检索、可证伪的研究问题，给出文献检索概念和创新点核验路径", "expected_route": "academic-research", "expected_mode": "question-discovery"},
+    {"id": "academic-evidence-1", "text": "精读这篇论文，提取关键主张的原文定位，做证据图和引用/主张审计", "expected_route": "academic-research", "expected_mode": "evidence-audit"},
+    {"id": "academic-design-1", "text": "审查这个研究方案的设计、数据可取得性和统计方法，列出同行评审阻断项", "expected_route": "academic-research", "expected_mode": "design-review"},
+    {"id": "academic-writing-1", "text": "按我提供的样稿保持学术语气，修订博士论文并准备投稿检查清单", "expected_route": "academic-research", "expected_mode": "academic-writing"},
+    {"id": "academic-passport-1", "text": "建立研究项目档案，记录材料状态、研究决定、未知项和交接内容", "expected_route": "academic-research", "expected_mode": "project-passport"},
+    {"id": "academic-fast-neighbor-1", "text": "查一下这篇论文的 DOI 和正式题名", "expected_route": "fast-retrieval", "expected_depth": "quick"},
     {"id": "explicit-1", "text": "用 fact-check 路由研究这条说法", "expected_route": "fact-check"}
   ]
 }

@@ -7,7 +7,7 @@
 1. 用户明确指定的格式、方法或工具。
 2. 是否涉及医疗、法律、财务或其他高风险领域。
 3. 是否存在明确的行动决策。
-4. 是否需要比较、历史类比、时间线、问题诊断或研究驱动可视化。
+4. 是否需要比较、历史类比、时间线、问题诊断、学术研究生命周期或研究驱动可视化。
 5. 对象是否陌生、动态、争议性强或需要多来源。
 6. 研究深度和输出格式。
 
@@ -20,6 +20,7 @@
 | timeline-cross-section | benchmark-comparison、fact-check | 需要解释历史如何塑造当前位置 |
 | decision-analysis | fact-check、benchmark-comparison | 选择依赖外部事实或替代方案 |
 | problem-diagnosis | decision-analysis | 先把问题问对，再选择行动 |
+| academic-research | fact-check、problem-diagnosis | 研究问题、文献证据、研究设计、审稿、写作或投稿准备；只选择一个当前学术瓶颈模式 |
 | historical-analogy | fact-check、decision-analysis | 历史机制完成后才需要现实试验 |
 | research-diagram | deep-research、fact-check | 从零研究并输出关系图、概念图、架构图或流程图；已有结构化数据只做转换时改用包内渲染脚本 |
 

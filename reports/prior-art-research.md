@@ -1,7 +1,8 @@
 # Prior-Art Research
 
-- Reviewed at: 2026-09-16
+- Last reviewed at: 2026-11-01; historical source rows retain their own snapshot dates
 - Scope: the eight user-specified sources plus the local lvsea-zao-skill authoring tool
+- Additional scope in this revision: `ozrwayne/rw-research-skill` and a bounded lvsea-zao prior-art discovery pass
 - Policy: read public source and metadata only; do not execute unreviewed upstream scripts or bundle upstream private material
 - Result: five repositories were cloned read-only at shallow snapshots, the specified OpenClaw path was independently checked and unavailable, and the local lvsea-zao prior-art script was run as an additional discovery pass
 
@@ -17,6 +18,7 @@
 | dontbesilent2025/dbskill/dbs-benchmark | Same dbskill snapshot; SKILL.md; CC BY-NC 4.0 | Compare candidates through a consistent filter and business value chain; inspect execution granularity rather than surface similarity | “Profit is the only standard”, fixed thresholds and dismissing user constraints are too dogmatic; copying can create ethical/legal risk | Adapt into multi-criteria mechanism/benchmark comparison |
 | dontbesilent2025/dbskill/dbs-standard-answer | Same dbskill snapshot; SKILL.md, evals and agent metadata; CC BY-NC 4.0 | Structure fingerprint, closest/success/failure/counterexample roles, analogy matrix, conditional answer and failure boundary | Historical analogy can become biography or survivor bias unless source independence and differences are explicit | Keep the structure-fingerprint and conditional-answer pattern, with evidence gates |
 | [wshuyi/research-to-diagram](https://github.com/wshuyi/research-to-diagram) | Git commit `c13ec59f3c894da607d7d5b17a18fccdba0bc389`; root README/README_CN, plugin metadata, nested SKILL.md, DOT templates and `generate_pdf.sh`; MIT | Research first, then extract entities/relations, choose visual grammar, write Graphviz DOT, render PDF and retain sources | Claude Code/WebSearch and macOS Homebrew assumptions are not portable; renderer is Bash-only; speed, node-count and PDF examples are upstream claims, not verified package evidence | Adapt into `research-diagram` route plus package-owned cross-platform renderer; reject mirror-copying and unverified output claims |
+| [ozrwayne/rw-research-skill](https://github.com/ozrwayne/rw-research-skill) | Git commit `dfa171d1b6a38aaf3e59fec3cba34722a584b150`; README, manifest, Apache-2.0 license, 4 public entry Skill files and 18 internal Skill files | Academic research lifecycle split into question/literature, paper evidence, research review and PhD writing, with explicit source, version, evidence and stopping gates | Upstream is a large multi-Skill package with provider/catalog claims not independently verified here; local research ledgers and scripts are not a fit for this single-root router; README install links name a different GitHub owner than the user URL | Adapt as one `academic-research` route with five modes and package-owned Chinese evidence gates; do not mirror the tree or claim upstream effectiveness |
 
 ## What was actually checked
 
@@ -47,3 +49,16 @@ The run returned 25 candidate families from SkillsMP. All three SkillsMP query r
 - dbskill is CC BY-NC 4.0. This package does not bundle its prose, examples, scripts, data or cases. The reusable content here is independently worded and limited to generic research questions and comparison structures, with attribution retained.
 - The missing OpenClaw source is not treated as confirmed prior art. Secondary directory pages may be used as leads for future review, not as a source of copied implementation or authoritative claims.
 - The research-to-diagram source is treated as method inspiration only. Its provider, platform, time, node-count and output-size claims are not package measurements; PDF/SVG/PNG claims require a real local render, and research quality still requires provider-backed evidence and independent review.
+
+## Additional source review: rw-research-skill
+
+- Review date: 2026-11-01.
+- User-specified remote: `https://github.com/ozrwayne/rw-research-skill`; the shallow clone remote and reviewed commit are `ozrwayne/rw-research-skill` and `dfa171d1b6a38aaf3e59fec3cba34722a584b150`.
+- The source manifest exposes four public entry points: research routing, paper extraction, research referee, and PhD writing. The repository snapshot contains 22 `SKILL.md` files in total, with internal modules for research questions, literature discovery, search strategy, evidence maps, claim/citation audits, design/data/statistics, peer review, revision, tone, submission, learning and research passports.
+- Reusable strengths were checked from the source files: select one primary academic bottleneck; preserve study/report/version identity; locate claims in the source; separate full text from abstract/metadata; distinguish no evidence from no study; test alternatives and counterevidence; keep review and submission decisions human-confirmed; and re-check current official journal or standard requirements.
+- The upstream repository is Apache-2.0. No upstream executable, installer, provider or internal research workspace was run or copied. The root package keeps its own MIT license for original content and records the upstream attribution in `THIRD_PARTY_NOTICES.md`.
+- A source README inconsistency remains visible: its install examples and public repository link refer to `rolandwonglonam/rw-research-skill`, while the user-specified remote and reviewed clone are `ozrwayne/rw-research-skill`. This is recorded as source metadata, not silently corrected.
+
+## Additional lvsea-zao discovery pass: rw-research-skill
+
+The installed lvsea-zao prior-art script ran three intent-shaped queries on 2026-11-01. SkillsMP returned candidates for all three queries; skills.sh returned parseable candidates for one and no parseable candidates for two. The normalized result contained 23 candidate families. This is a discovery signal only: it does not prove quality, compatibility, installation, provider availability or research effectiveness.

@@ -14,6 +14,12 @@
 | Staged premise challenge | dbs-diagnosis, reworded independently | Many requests fail because the question, not the answer, is under-specified |
 | Consistent value-chain comparison | dbs-benchmark, reworded independently | Benchmarking needs mechanism and execution detail, not surface resemblance |
 | Structure fingerprint and success/failure/counterexample roles | dbs-standard-answer, reworded independently | Historical analogies need structural similarity and boundary checks |
+| Turn academic interest into a bounded, searchable, falsifiable question | rw-research-question | A research route should constrain constructs, data, alternatives and disconfirming observations before suggesting methods |
+| Keep study/report/version identity and source locators | rw-paper-extractor, rw-evidence-map, rw-research-passport | Claims, reports and evidence must remain traceable across revisions without copying full papers into the package |
+| Separate citation existence, citation format and claim support | rw-citation-audit, rw-claim-audit | A reference can exist and be formatted correctly while still failing to support the sentence |
+| Match research design and statistics to the question, unit and estimand | rw-research-design, rw-statistics-audit, rw-research-referee | Review should expose unit, bias, denominator, uncertainty and alternative explanations rather than declare approval |
+| Content-necessity gate before academic tone or local revision | rw-phd-write, rw-phd-tone, rw-revision-patch | Writing help should preserve evidence and author intent, limit edit scope and keep an auditable patch |
+| Human-confirmed submission and decision boundaries | rw-journal-submission, rw-peer-review | Current journal rules, author disclosures, review disposition and final submit cannot be inferred from templates |
 | Research-to-diagram separation of research, structure and rendering | wshuyi/research-to-diagram | A visual artifact is more trustworthy when its nodes and edges come from an explicit evidence process rather than decorative layout |
 | Visual grammar matched to the object | wshuyi/research-to-diagram | People, concepts, processes, architectures and timelines need different node, edge and layout choices |
 | Editable source plus rendered artifact plus sources | wshuyi/research-to-diagram | DOT can be reviewed and revised; the rendered file serves communication; the source ledger preserves auditability |
@@ -32,6 +38,9 @@
 | Fixed “10x faster”, 2–5 minute, 50+ node and PDF-size claims | Keep only the bounded readability heuristic; record time, node count and file size as run evidence when actually measured |
 | PlantUML/Mermaid as if already available | Treat as optional adapters; only claim them after the host has the renderer and a successful invocation |
 | Parallel subagents as a requirement | Parallel lanes are optional host capabilities; a single agent can run the same query matrix sequentially |
+| Four public entry points plus many internal modules | One `academic-research` route with five mode labels and the existing evidence bus; load only the module needed by the current bottleneck |
+| Full research passport, review ledger and credential stores | Reuse the concepts as bounded handoff objects; create detailed ledgers only when the user's project actually needs them |
+| Upstream provider/catalog or repository popularity signals | Treat them as discovery metadata only; package availability and research quality still require local and provider-backed evidence |
 
 ## Reject
 
@@ -46,6 +55,8 @@
 - Publishing upstream CC BY-NC content or silently changing its license boundary.
 - Treating a graph’s visual neatness as evidence for an unsupported node or relationship.
 - Adding a second root Skill or mirroring the upstream plugin tree into a vertical router.
+- Copying the upstream 22-Skill directory, internal ledgers, scripts, templates, cases or source-specific wording into this package.
+- Treating a DOI, abstract, citation format pass, review ledger pass or journal checklist as proof of research validity, statistical correctness or acceptance.
 
 ## Invent
 
@@ -58,6 +69,8 @@
 7. A maintenance boundary: references carry judgment; scripts carry deterministic checks; reports carry provenance and limitations.
 8. A Chinese-first operating style shaped for manufacturing management, policy, safety, operations, AI tools and reusable local artifacts.
 9. A research-to-visualization route that keeps evidence mapping, editable DOT, rendered output and visual QA as separate checkpoints.
+10. A single academic route with deterministic submode dispatch and explicit handoff objects, so paper work is not mixed with general web research or simple DOI retrieval.
+11. A lifecycle evidence gate that carries source version, locator, support scope, counterevidence and human confirmation into academic writing and submission preparation.
 
 ## Generalization gate result
 
@@ -72,5 +85,6 @@ The combined design supports at least these independent families:
 - benchmark and competitor comparison;
 - historical analogy and conditional standard answers.
 - research-driven relationship, concept, process, technical architecture and knowledge-graph visualization.
+- academic question and literature discovery, paper evidence extraction and audit, research design/statistics/peer review, academic writing and submission preparation.
 
 The methods are therefore implemented as a router with modules, not as one inseparable mega-prompt. Pure conversion of user-provided structured data remains a renderer action, not a research claim.

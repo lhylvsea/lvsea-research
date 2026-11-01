@@ -24,14 +24,17 @@
     {"text": "从历史案例研究制造企业怎样从老板亲自交付转向流程化管理", "family": "historical_analogy", "min_concept_matches": 2},
     {"text": "研究这个 AI 产品从诞生到现在的路线、竞品和未来情景", "family": "timeline_cross_section", "min_concept_matches": 2},
     {"text": "帮我研究一下这个政策对石墨深加工项目的影响，必须区分事实和推断", "family": "policy_research", "min_concept_matches": 2},
-    {"text": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源", "family": "research_diagram", "min_concept_matches": 2}
+    {"text": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源", "family": "research_diagram", "min_concept_matches": 2},
+    {"text": "把研究兴趣转成可证伪的研究问题，做文献检索和证据核验，并给出下一步", "family": "academic_research", "min_concept_matches": 2},
+    {"text": "审查论文的研究设计、统计方法和引用支持范围，形成可复核的审稿意见", "family": "academic_review", "min_concept_matches": 2}
   ],
   "should_not_trigger": [
     {"text": "只解释一下贝叶斯和频率学派的区别，不要查资料", "family": "explain_only"},
     {"text": "把这段中文纯翻译成英文，不要研究", "family": "translation_only"},
     {"text": "只摘要这篇文章，不要补充来源或分析", "family": "summary_only"},
     {"text": "只给我三个研究主题方向，不要做研究", "family": "brainstorm_only"},
-    {"text": "只查看这张图片里的文字，不要核验和分析", "family": "read_only"}
+    {"text": "只查看这张图片里的文字，不要核验和分析", "family": "read_only"},
+    {"text": "把这篇论文摘要纯翻译成中文，不做文献检索、引用核验或研究分析", "family": "academic_translation_only"}
   ],
   "near_neighbor": [
     {"text": "帮我写一段关于设备管理的宣传文案", "family": "copywriting"},

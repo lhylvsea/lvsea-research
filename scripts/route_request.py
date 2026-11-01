@@ -60,6 +60,12 @@ ROUTES: dict[str, dict[str, Any]] = {
         "collaborators": ["fact-check"],
         "source_lanes": ["closest success", "cross-domain mechanism", "failure case", "boundary or counterexample"],
     },
+    "academic-research": {
+        "role": "academic research lifecycle from question and literature to evidence, design review, writing, and submission preparation",
+        "primary_candidates": ["anysearch", "multi-search-engine", "host-web"],
+        "collaborators": ["fact-check", "problem-diagnosis"],
+        "source_lanes": ["user materials", "primary papers and official standards", "independent evidence", "counterevidence"],
+    },
     "research-diagram": {
         "role": "research-driven relationship, concept, process, or technical architecture diagram",
         "primary_candidates": ["anysearch", "multi-search-engine", "host-web"],
@@ -92,6 +98,15 @@ EXPLICIT_ALIASES = {
     "problem-diagnosis": ["problem-diagnosis", "商业诊断", "问题诊断", "前提挑战"],
     "benchmark-comparison": ["benchmark-comparison", "竞品分析", "对标分析", "方案比较"],
     "historical-analogy": ["historical-analogy", "历史同构", "标准答案", "历史类比"],
+    "academic-research": [
+        "academic-research",
+        "academic research",
+        "rw-research-skill",
+        "学术研究",
+        "科研研究",
+        "文献研究",
+        "论文研究",
+    ],
     "research-diagram": [
         "research-diagram",
         "research to diagram",
@@ -102,6 +117,14 @@ EXPLICIT_ALIASES = {
         "知识图谱",
         "关系图谱",
     ],
+}
+
+ACADEMIC_MODES = {
+    "question-discovery": "研究问题、文献发现、检索策略、综述和候选创新点",
+    "evidence-audit": "论文提取、证据图、引用核验和主张到来源审计",
+    "design-review": "研究设计、数据可取得性、统计审查和同行评审",
+    "academic-writing": "博士/论文写作、语气、局部修订、投稿与审稿回复",
+    "project-passport": "研究项目档案、材料状态、决定凭据和交接",
 }
 
 
@@ -186,6 +209,122 @@ def _risk_flags(text: str) -> list[str]:
     return flags
 
 
+def _looks_academic(text: str) -> bool:
+    academic_terms = (
+        "论文",
+        "文献",
+        "综述",
+        "研究问题",
+        "研究设计",
+        "研究方案",
+        "学位论文",
+        "博士论文",
+        "期刊",
+        "审稿",
+        "投稿",
+        "统计审查",
+        "主张核验",
+        "引用核验",
+        "学术",
+        "研究档案",
+        "项目档案",
+        "研究项目",
+        "研究项目状态",
+        "研究交接",
+        "research passport",
+        "project status",
+        "manuscript",
+        "literature",
+        "peer review",
+        "journal submission",
+    )
+    academic_actions = (
+        "研究",
+        "分析",
+        "设计",
+        "提取",
+        "精读",
+        "检索",
+        "发现",
+        "审查",
+        "核验",
+        "写",
+        "修订",
+        "准备",
+        "建立",
+        "记录",
+        "交接",
+        "投稿",
+        "review",
+        "extract",
+        "audit",
+    )
+    return _has(text, *academic_terms) and _has(text, *academic_actions)
+
+
+def _academic_mode(text: str) -> str:
+    if _has(
+        text,
+        "论文提取",
+        "精读",
+        "证据图",
+        "引用核验",
+        "主张核验",
+        "引用是否支持",
+        "claim audit",
+        "citation audit",
+        "paper extraction",
+        "evidence map",
+    ):
+        return "evidence-audit"
+    if _has(
+        text,
+        "研究设计",
+        "研究方案",
+        "统计审查",
+        "统计方法",
+        "数据可取得",
+        "同行评审",
+        "审稿",
+        "peer review",
+        "research design",
+        "statistics audit",
+    ):
+        return "design-review"
+    if _has(
+        text,
+        "博士论文",
+        "学位论文",
+        "论文写作",
+        "学术写作",
+        "保持语气",
+        "论文修订",
+        "投稿",
+        "审稿回复",
+        "phd",
+        "manuscript",
+        "journal submission",
+        "revision",
+    ):
+        return "academic-writing"
+    if _has(
+        text,
+        "研究档案",
+        "项目档案",
+        "研究项目档案",
+        "研究项目状态",
+        "材料状态",
+        "研究决定",
+        "决定凭据",
+        "研究交接",
+        "交接内容",
+        "research passport",
+        "project status",
+    ):
+        return "project-passport"
+    return "question-discovery"
+
+
 def _choose_route(text: str) -> tuple[str, str]:
     explicit = _explicit_route(text)
     if explicit:
@@ -205,9 +344,6 @@ def _choose_route(text: str) -> tuple[str, str]:
 
     if _has(text, "为什么不", "问题出在哪", "前提", "假设", "因果", "商业困境", "瓶颈", "诊断", "复盘"):
         return "problem-diagnosis", "the request asks to locate a problem, premise, or causal gap"
-
-    if _has(text, "查证", "核实", "真假", "是否属实", "数字对不对", "法规依据", "fact check", "verify"):
-        return "fact-check", "the request asks to verify claims or source-backed facts"
 
     research_terms = ("研究", "调研", "深度分析", "系统分析", "research", "investigate")
     diagram_terms = (
@@ -235,6 +371,12 @@ def _choose_route(text: str) -> tuple[str, str]:
     if _has(text, "是什么", "最新情况", "网页内容", "链接内容", "查一下", "lookup", "extract") and _depth(text) == "quick":
         return "fast-retrieval", "the request is a bounded retrieval task"
 
+    if _looks_academic(text):
+        return "academic-research", "the request targets an academic research lifecycle or manuscript task"
+
+    if _has(text, "查证", "核实", "真假", "是否属实", "数字对不对", "法规依据", "fact check", "verify"):
+        return "fact-check", "the request asks to verify claims or source-backed facts"
+
     return "deep-research", "the request asks for research without a narrower route signal"
 
 
@@ -258,6 +400,7 @@ def choose_route(request: str, extra_roots: list[str] | None = None) -> dict[str
     text = _normalize(original)
     route, reason = _choose_route(text)
     depth = _depth(text)
+    academic_mode = _academic_mode(text) if route == "academic-research" else None
     risk_flags = _risk_flags(text)
     roots = _skill_roots(extra_roots)
 
@@ -281,6 +424,8 @@ def choose_route(request: str, extra_roots: list[str] | None = None) -> dict[str
         "route": route,
         "reason": reason,
         "depth": depth,
+        "academic_mode": academic_mode,
+        "academic_mode_description": ACADEMIC_MODES.get(academic_mode) if academic_mode else None,
         "risk_flags": risk_flags,
         "primary_candidates": candidate_names,
         "primary_provider": primary_provider,

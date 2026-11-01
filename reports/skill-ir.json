@@ -2,13 +2,13 @@
   "schema_version": "1.0",
   "package": {
     "name": "lvsea-research",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "owner": "海洋哥 / lhylvsea",
     "status": "active",
     "maturity_tier": "governed"
   },
   "intent": {
-    "job_to_be_done": "把研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
+    "job_to_be_done": "把一般研究、学术研究、查证、决策、诊断、对标、历史同构、时间线分析和研究驱动可视化统一路由到可审计的中文优先研究流程。",
     "target_users": [
       "海洋哥及其本地 Codex 工作流",
       "制造企业管理者和工程/运营团队",
@@ -24,6 +24,7 @@
       "事实核验表",
       "证据账本与来源矩阵",
       "决策/对标/历史类比报告",
+      "研究问题卡、论文证据图、研究设计审查、学术修订和投稿检查清单",
       "可编辑 DOT、PDF/SVG/PNG 图形和节点/关系来源映射",
       "路由、验证和未核验项记录"
     ],
@@ -71,6 +72,16 @@
         "text": "研究膨润土猫砂工艺和设备关系，生成知识图谱并标注来源",
         "family": "research_diagram",
         "min_concept_matches": 2
+      },
+      {
+        "text": "把研究兴趣转成可证伪的研究问题，做文献检索和证据核验，并给出下一步",
+        "family": "academic_research",
+        "min_concept_matches": 2
+      },
+      {
+        "text": "审查论文的研究设计、统计方法和引用支持范围，形成可复核的审稿意见",
+        "family": "academic_review",
+        "min_concept_matches": 2
       }
     ],
     "negative": [
@@ -93,6 +104,10 @@
       {
         "text": "只查看这张图片里的文字，不要核验和分析",
         "family": "read_only"
+      },
+      {
+        "text": "把这篇论文摘要纯翻译成中文，不做文献检索、引用核验或研究分析",
+        "family": "academic_translation_only"
       }
     ],
     "near_neighbor": [
@@ -268,6 +283,24 @@
           "fact-check"
         ]
       },
+      "academic-research": {
+        "role": "academic research lifecycle from question and literature to evidence, design review, writing, and submission preparation",
+        "source_lanes": [
+          "user materials",
+          "primary papers and official standards",
+          "independent evidence",
+          "counterevidence"
+        ],
+        "primary_candidates": [
+          "anysearch",
+          "multi-search-engine",
+          "host-web"
+        ],
+        "collaborators": [
+          "fact-check",
+          "problem-diagnosis"
+        ]
+      },
       "research-diagram": {
         "role": "research-driven relationship, concept, process, or technical architecture diagram",
         "source_lanes": [
@@ -349,6 +382,42 @@
         "expected_route": "research-diagram"
       },
       {
+        "id": "academic-question-1",
+        "text": "把这个研究兴趣转成可检索、可证伪的研究问题，给出文献检索概念和创新点核验路径",
+        "expected_route": "academic-research",
+        "expected_mode": "question-discovery"
+      },
+      {
+        "id": "academic-evidence-1",
+        "text": "精读这篇论文，提取关键主张的原文定位，做证据图和引用/主张审计",
+        "expected_route": "academic-research",
+        "expected_mode": "evidence-audit"
+      },
+      {
+        "id": "academic-design-1",
+        "text": "审查这个研究方案的设计、数据可取得性和统计方法，列出同行评审阻断项",
+        "expected_route": "academic-research",
+        "expected_mode": "design-review"
+      },
+      {
+        "id": "academic-writing-1",
+        "text": "按我提供的样稿保持学术语气，修订博士论文并准备投稿检查清单",
+        "expected_route": "academic-research",
+        "expected_mode": "academic-writing"
+      },
+      {
+        "id": "academic-passport-1",
+        "text": "建立研究项目档案，记录材料状态、研究决定、未知项和交接内容",
+        "expected_route": "academic-research",
+        "expected_mode": "project-passport"
+      },
+      {
+        "id": "academic-fast-neighbor-1",
+        "text": "查一下这篇论文的 DOI 和正式题名",
+        "expected_route": "fast-retrieval",
+        "expected_depth": "quick"
+      },
+      {
         "id": "explicit-1",
         "text": "用 fact-check 路由研究这条说法",
         "expected_route": "fact-check"
@@ -368,6 +437,7 @@
   },
   "resources": {
     "references": [
+      "references/academic-research.md",
       "references/challenge-and-diagnosis.md",
       "references/decision-and-bayesian.md",
       "references/historical-analogy.md",
@@ -411,7 +481,7 @@
     "trust_boundary": "external-evidence-dependent"
   },
   "governance": {
-    "review_due": "2026-12-16",
+    "review_due": "2027-02-01",
     "review_cadence": "quarterly",
     "release_gates": [
       "intent_capture",

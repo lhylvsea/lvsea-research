@@ -30,9 +30,12 @@ def evaluate(cases_path: Path, extra_roots: list[str] | None = None) -> dict[str
         result = choose_route(str(raw["text"]), extra_roots)
         expected = str(raw.get("expected_route", ""))
         expected_depth = raw.get("expected_depth")
+        expected_mode = raw.get("expected_mode")
         passed = result["route"] == expected
         if expected_depth:
             passed = passed and result["depth"] == expected_depth
+        if expected_mode:
+            passed = passed and result.get("academic_mode") == expected_mode
         row = {
             "id": raw.get("id"),
             "text": raw["text"],
@@ -40,6 +43,8 @@ def evaluate(cases_path: Path, extra_roots: list[str] | None = None) -> dict[str
             "actual_route": result["route"],
             "expected_depth": expected_depth,
             "actual_depth": result["depth"],
+            "expected_mode": expected_mode,
+            "actual_mode": result.get("academic_mode"),
             "primary_provider": result["primary_provider"],
             "collaborators": result["collaborator_candidates"],
             "passed": passed,

@@ -1,40 +1,40 @@
 {
   "status": "pass",
   "root": "integrate-research-to-diagram",
-  "entrypoint_bytes": 11975,
-  "reference_bytes": 23862,
-  "total_package_bytes": 92763,
+  "entrypoint_bytes": 13453,
+  "reference_bytes": 29632,
+  "total_package_bytes": 106964,
   "groups": {
     "entrypoint": {
-      "bytes": 11975,
+      "bytes": 13453,
       "files": 1
     },
     "interface": {
-      "bytes": 4947,
+      "bytes": 5582,
       "files": 2
     },
     "references": {
-      "bytes": 23862,
-      "files": 10
+      "bytes": 29632,
+      "files": 11
     },
     "scripts": {
-      "bytes": 47140,
+      "bytes": 51700,
       "files": 8
     },
     "evals": {
-      "bytes": 4839,
+      "bytes": 6597,
       "files": 2
     }
   },
   "largest_files": [
     {
       "path": "scripts/route_request.py",
-      "bytes": 13672,
+      "bytes": 17863,
       "group": "scripts"
     },
     {
       "path": "SKILL.md",
-      "bytes": 11975,
+      "bytes": 13453,
       "group": "entrypoint"
     },
     {
@@ -49,7 +49,12 @@
     },
     {
       "path": "references/research-diagram.md",
-      "bytes": 5632,
+      "bytes": 5717,
+      "group": "references"
+    },
+    {
+      "path": "references/academic-research.md",
+      "bytes": 5476,
       "group": "references"
     },
     {
@@ -59,23 +64,18 @@
     },
     {
       "path": "scripts/export_skill_ir.py",
-      "bytes": 4429,
+      "bytes": 4430,
       "group": "scripts"
     },
     {
       "path": "scripts/render_diagram.py",
-      "bytes": 4139,
+      "bytes": 4250,
       "group": "scripts"
     },
     {
       "path": "manifest.json",
-      "bytes": 3318,
+      "bytes": 3951,
       "group": "interface"
-    },
-    {
-      "path": "scripts/route_eval.py",
-      "bytes": 3017,
-      "group": "scripts"
     }
   ],
   "warnings": []

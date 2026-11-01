@@ -8,20 +8,20 @@
   ],
   "missing_description_concepts": [],
   "summary": {
-    "total": 18,
-    "passed": 18,
+    "total": 21,
+    "passed": 21,
     "false_positive": 0,
     "false_negative": 0,
     "pass_rate": 1.0
   },
   "bucket_summary": {
     "should_trigger": {
-      "total": 7,
-      "passed": 7
+      "total": 9,
+      "passed": 9
     },
     "should_not_trigger": {
-      "total": 5,
-      "passed": 5
+      "total": 6,
+      "passed": 6
     },
     "near_neighbor": {
       "total": 4,
@@ -127,6 +127,33 @@
           "research"
         ],
         "negative_pattern": null
+      },
+      {
+        "prompt": "把研究兴趣转成可证伪的研究问题，做文献检索和证据核验，并给出下一步",
+        "family": "academic_research",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "审查论文的研究设计、统计方法和引用支持范围，形成可复核的审稿意见",
+        "family": "academic_review",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.667,
+        "matched_concepts": [
+          "authoring_action",
+          "research"
+        ],
+        "negative_pattern": null
       }
     ],
     "should_not_trigger": [
@@ -191,6 +218,20 @@
           "evidence"
         ],
         "negative_pattern": "只查看"
+      },
+      {
+        "prompt": "把这篇论文摘要纯翻译成中文，不做文献检索、引用核验或研究分析",
+        "family": "academic_translation_only",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 1.0,
+        "matched_concepts": [
+          "authoring_action",
+          "evidence",
+          "research"
+        ],
+        "negative_pattern": "纯翻译"
       }
     ],
     "near_neighbor": [
